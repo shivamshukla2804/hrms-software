@@ -1,0 +1,29 @@
+<section @slideInRight>
+    <div class="basic-card">
+        <div class="header">
+            <p class="header-text">{{uiMessage.PROFILE_PIC_HEADER}}</p>
+        </div>
+        <div class="formgroup">
+            <form class="form" [formGroup]="imgForm" (ngSubmit)="save()">
+                <div class="container-1">
+                    <p class="browse">{{uiMessage.BROWSE_VALUE}}</p>
+                    <input type="file" accept=".jpg,.png,.jpeg" (change)="readURL($event)" formControlName="img">
+                    <br>
+                    <small>{{uiMessage.FORMAT}}</small>
+                </div>
+                <mat-icon *ngIf="imageSrc" class="remove" (click)="remove()" >cancel</mat-icon>
+
+                <img src="{{imageSrc}}" class="profilePreviewImg" onerror="this.src='/assets/default_male.jpg'">
+                <div class="remove-pic">
+                    <input type="checkbox">
+                    <p class="remove-value">{{uiMessage.REMOVE_PIC_VALUE}}</p>
+                </div>
+                <div class="classyButton">
+                    <button type="submit" class="btn_primary" mat-raised-button>{{uiMessage.BUTTON_VALUE}}</button>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+</section>

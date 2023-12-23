@@ -1,0 +1,55 @@
+<section>
+    <div class="row">
+        <app-common-table [heading]="'Planned Deliveries'" [columns]="plannedDeliveriesColumns"
+            [dataSourceForTable]="plannedDeliveriesDataSource"></app-common-table>
+    </div>
+    <div class="row">
+        <app-common-table [heading]="'Team Detail (Team Size 4)'" [columns]="teamDetailColumns"
+            [dataSourceForTable]="teamDetailColumnsDataSource"></app-common-table>
+    </div>
+    <div class="exp_panel_wraper">
+
+        <div class="exp_panel">
+            <ng-container *ngFor="let item of tags1">
+
+                <div class="panel">
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <div class="text">
+                                <h1 class="letter">{{item.charAt(0)}}</h1>
+                                <div class="inner">
+                                    <h2 class="heading">{{item}}</h2>
+                                    <span class="no_doc">No Document</span>
+                                </div>
+                            </div>
+                        </mat-expansion-panel-header>
+
+                    </mat-expansion-panel>
+                </div>
+            </ng-container>
+
+        </div>
+        <div class="exp_panel">
+            <ng-container *ngFor="let item of tags2">
+
+                <div class="panel">
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <div class="text">
+                                <h1 class="letter">{{item.charAt(0)}}</h1>
+                                <div class="inner">
+                                    <h2 class="heading">{{item}}</h2>
+                                    <span class="no_doc">No Document</span>
+                                </div>
+                            </div>
+                        </mat-expansion-panel-header>
+
+                    </mat-expansion-panel>
+                </div>
+            </ng-container>
+
+        </div>
+
+    </div>
+
+</section>

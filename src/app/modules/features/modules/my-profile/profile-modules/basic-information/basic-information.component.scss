@@ -1,0 +1,117 @@
+@import 'src/scss/buttons.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section {
+    padding: 0px !important;
+    background-color: #fff;
+
+    .header {
+        border-bottom: 1px solid gainsboro;
+
+        .header-text {
+            color: #3246d3;
+            font-size: 24px;
+            word-spacing: 1px;
+            padding: 11px 25px 11px 15px;
+            font-weight: 500;
+        }
+
+    }
+
+    form {
+        padding: 20px;
+
+        .row {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            gap: 1.2rem;
+        }
+   
+
+        .row3 {
+            display: grid;
+            grid-template-columns: auto auto;
+
+            .inputs {
+                display: grid;
+                grid-template-columns: auto auto;
+                gap: 1.2rem;
+            }
+
+        }
+
+        // .address {
+        //     display: flex;
+        //     flex-direction: column;
+        //     margin-top: 10px;
+
+
+        // }
+
+        .saveButton {
+            border: none;
+            cursor: pointer;
+            color: white;
+        }
+    }
+
+}
+
+// ::ng-deep {
+//     .mat-select-panel {
+//         min-width: calc(100% + 15px) !important;
+//         margin: 2.5rem auto auto auto !important;
+//     }
+
+//     .mat-form-field-appearance-outline .mat-form-field-flex {
+//         box-shadow: 0px 4px 8px rgb(44 39 56 / 4%) !important;
+//     }
+
+//     .mat-form-field-appearance-outline .mat-form-field-infix {
+//         padding: 12px 0px 15px 0px;
+//     }
+
+//     .mat-datepicker-toggle {
+//         color: gainsboro;
+//         position: absolute;
+//         right: -12px;
+//         top: -5px;
+//     }
+
+//     .mat-select-arrow {
+//         width: 0;
+//         height: 0;
+//         border-left: 10px solid transparent;
+//         border-right: 10px solid transparent;
+//         border-top: 11px solid;
+//         margin: 0 4px;
+//     }
+// }
+
+section {
+    @media only screen and (max-width: 1500px) {
+        form{
+            .row3 {
+                grid-template-columns: auto;
+            }
+        }
+    }
+    @media only screen and (max-width: 750px) {
+        form{
+            .row{
+                grid-template-columns: auto;
+            }
+            .row3{
+                .inputs{
+                    grid-template-columns: auto;
+
+                }
+            }
+        }
+    }
+}

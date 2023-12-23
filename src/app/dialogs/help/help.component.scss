@@ -1,0 +1,76 @@
+@import 'src/scss/buttons.scss';
+section{
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    .icon{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 5em;
+        height: 5em;
+        margin: 2rem auto 1.875rem;
+        border: 0.25em solid #9de0f6;
+        border-radius: 50%;
+
+        transform: translate(0,-50%);
+        h3{
+            margin: 0;
+            font-size: 3.75em;
+            color: #3fc3ee;
+        }
+    }
+    .upper{ 
+        margin-bottom: 0.2rem;
+        .link1{
+            font-size: 28px;
+            text-decoration: none;
+            font-weight: 400;
+            color: #000;
+        }
+    }
+    .middle{
+        color: #545454;
+        font-size: 1.125rem;
+        font-weight: 400;
+        line-height: normal;
+        text-align: center;
+        word-wrap: break-word;
+        margin:1rem 0;
+        .link2{
+            font-size: 18px;
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            color: #000;
+            -webkit-transition: all ease-in .3s;
+          
+        }  :hover{
+            color:#3fc3ee;
+        }
+    }
+    .action{
+        .ok{
+            border: 0;
+            border-radius: 0.25em;
+            background: initial;
+            background-color: #3085d6;
+            color: #fff;
+            font-size: 1.0625em;
+            margin: 0.3125em;
+            padding: 0.625em 2em;
+            box-shadow: none;
+            font-weight: 500;
+        }
+    }
+    .close{
+        position: absolute;
+        right: -20px;
+       top: -24px;
+       cursor: pointer;
+       :hover{
+        color: red;
+       }
+    }
+}

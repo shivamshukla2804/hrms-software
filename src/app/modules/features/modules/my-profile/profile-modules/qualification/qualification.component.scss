@@ -1,0 +1,29 @@
+@import "../basic-information/basic-information.component.scss";
+
+section {
+  .card2 {
+    margin-top: 20px;
+    .table{
+      padding: 20px;
+    }
+  }
+
+  form {
+    .inputs {
+      display: grid;
+      grid-template-columns: auto auto;
+      gap: 1.2rem;
+    }
+  }
+}
+
+section {
+  @media only screen and (max-width: 1500px) {
+    form{
+
+      .inputs {
+        grid-template-columns: auto;
+      }
+    }
+  }
+}

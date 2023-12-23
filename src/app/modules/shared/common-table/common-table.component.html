@@ -1,0 +1,164 @@
+<section>
+<div class="header" *ngIf="heading">
+  <h3 class="heading">{{heading}}</h3>
+</div>
+
+  <table mat-table [dataSource]="dataSourceForTable" matSort>
+
+    <ng-container *ngFor="let row of columns" [matColumnDef]="row.heading">
+
+      <ng-container *ngIf="row.isSortable; else notSortable">
+
+        <th mat-header-cell *matHeaderCellDef [mat-sort-header]="row.key">
+          {{ row.heading |titlecase }}
+        </th>
+
+      </ng-container>
+
+      <ng-template #notSortable>
+        <th mat-header-cell *matHeaderCellDef>
+          {{ row.heading |titlecase }}
+        </th>
+      </ng-template>
+
+      <td mat-cell *matCellDef="let element">
+        <ng-container [ngSwitch]="row.type">
+          <!-- type text Data -->
+          <div class="name">
+
+            <ng-container *ngSwitchCase="'text'">
+              <ng-container *ngIf="row.key=='name'" [ngSwitch]="element.doc_type">
+                <ng-container *ngSwitchCase="'pdf'">
+                  <mat-icon class="icon">picture_as_pdf</mat-icon>
+                </ng-container>
+
+                <ng-container *ngSwitchCase="'png'">
+                  <mat-icon class="icon">image</mat-icon>
+                </ng-container>
+                <ng-container *ngSwitchCase="'jpeg'">
+                  <mat-icon class="icon">image</mat-icon>
+                </ng-container>
+                <ng-container *ngSwitchCase="'doc'">
+                  <mat-icon class="icon">description</mat-icon>
+                </ng-container>
+              </ng-container>
+              <ng-container *ngIf="row.key=='candidate_status'" [ngSwitch]="element.candidate_status">
+                <ng-container *ngSwitchCase="'closed'">
+                  <mat-icon class="icon red">brightness_1</mat-icon>
+                </ng-container>
+
+                <ng-container *ngSwitchCase="'open'">
+                  <mat-icon class="icon green">brightness_1</mat-icon>
+                </ng-container>
+              </ng-container>
+
+              {{ element[row.key] }}
+            </ng-container>
+          </div>
+
+          <ng-container *ngSwitchCase="'html'">
+
+              <div [innerHTML]="sanitizer.bypassSecurityTrustHtml( element[row?.key] )"></div>
+          </ng-container>
+
+          <!-- type Link Data -->
+
+          <ng-container *ngSwitchCase="'link'">
+            <a [href]=""> {{ element[row.key]} }</a>
+          </ng-container>
+          <!-- type action Data -->
+
+          <ng-container *ngSwitchCase="'action'">
+            <div class="action">
+              <ng-container *ngFor="let item of element['action']">
+
+                <!-- <ng-container *ngIf="item.type=='route'; else othr">
+                  <a [routerLink]="[item?.route|absolutePath,item?.routeID]">
+                    <button class="action_button" [ngClass]="item.btnStyle" >
+                      {{item?.text|titlecase}} 
+                      <ng-container *ngIf="item.icon; else othrBtn">
+                        <mat-icon class="mat-18">{{ item.icon }} </mat-icon>
+                      </ng-container>
+
+                      <ng-template #othrBtn>
+                       {{item.btnText|titlecase}}
+                      </ng-template>
+
+
+                    </button>
+                  </a>
+                </ng-container>
+
+                <ng-template #othr>
+                  <a [href]="item.link" download >
+                    <button  class="action_button" [ngClass]="item.btnStyle" (click)="action(item)">
+                      {{item?.text|titlecase}}
+                      <mat-icon class="mat-18">{{ item.icon }} </mat-icon>
+                    </button>
+                  </a>
+                </ng-template> -->
+
+                <ng-container [ngSwitch]="item.type"> 
+
+                  <ng-container *ngSwitchCase="'route'">
+                    <a [routerLink]="[item?.route|absolutePath,item?.routeID]">
+                      <button class="action_button" [ngClass]="item.btnStyle" >
+                        {{item?.text|titlecase}} 
+                        <ng-container *ngIf="item.icon; else othrBtn">
+                          <mat-icon class="mat-18">{{ item.icon }} </mat-icon>
+                        </ng-container>
+  
+                        <ng-template #othrBtn>
+                         {{item.btnText|titlecase}}
+                        </ng-template>
+                      </button>
+                    </a>
+                  </ng-container>
+
+                  <ng-container *ngSwitchCase="'download'">
+                    <a [href]="item.link" download >
+                      <button  class="action_button" [ngClass]="item.btnStyle" >
+                        {{item?.text|titlecase}}
+                        <mat-icon class="mat-18">{{ item.icon }} </mat-icon>
+                      </button>
+                    </a>
+                  </ng-container>
+                  <ng-container *ngSwitchCase="'dialogOpen'">
+                    <button class="action_button" [ngClass]="item.btnStyle"  (click)="action(item)">
+                      {{item?.text|titlecase}} 
+                      <ng-container *ngIf="item.icon; else othrBtn">
+                        <mat-icon class="mat-18">{{ item.icon }} </mat-icon>
+                      </ng-container>
+
+                      <ng-template #othrBtn>
+                       {{item.btnText|titlecase}}
+                      </ng-template>
+                    </button>
+                  </ng-container>
+
+                </ng-container>
+
+
+              </ng-container>
+            </div>
+          </ng-container>
+
+        </ng-container>
+
+      </td>
+
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="headerRow"></tr>
+    <tr mat-row *matRowDef="let row; columns: headerRow"></tr>
+    <!-- No DATA FOUND -->
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" [attr.colspan]="columns.length" style="height: 50px; text-align:center">
+        No data Found
+      </td>
+    </tr>
+  </table>
+  <mat-paginator *ngIf="pagination" appPagination [pageSizeOptions]="paginationSizes" [pageSize]="defaultPageSize"
+    [hidePageSize]='true'></mat-paginator>
+
+</section>

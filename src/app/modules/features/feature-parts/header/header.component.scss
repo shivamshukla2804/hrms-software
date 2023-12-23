@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.mat-toolbar {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+
+    .left {
+        display: flex;
+        align-items: center;
+
+        .logo_dash {
+            width: 200px;
+            margin-right: 15px;
+        }
+
+        .logo_app {
+            width: 51px;
+            margin-right: 12px;
+        }
+
+        .menu_icon {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+    }
+
+    .right {
+        display: flex;
+        align-items: center;
+        position: relative;
+        gap: 20px;
+        margin-right: 25px;
+
+        .profile {
+            color: black;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            .user_image {
+                height: 30px;
+                width: 30px;
+                border-radius: 50%;
+            }
+
+            .menu_button {
+                transition: 300ms ease-in-out;
+                transform: rotate(0deg);
+                cursor: pointer;
+            }
+
+            .menu_button.rotated {
+                transform: rotate(180deg);
+            }
+        }
+
+        .help {
+            .help_button {
+                background-color: #d9534f;
+                color: #fff;
+                border: none;
+                padding: 3px 10px;
+                border-radius: 1px;
+                cursor: pointer;
+            }
+        }
+
+        .notification {
+            color: var(--shadow-color);
+            display: contents;
+            cursor: pointer;
+            mat-icon {
+                font-size: 28px;
+            }
+        }
+    }
+
+    .muted_text {
+        position: absolute;
+        color: var(--shadow-color);
+        font-size: 10px;
+        right: 77px;
+        top: 0px;
+    }
+
+    @media only screen and (max-width: 1000px) {
+        .left {
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .right {
+            display: none;
+        }
+
+        .muted_text {
+            display: none;
+        }
+    }
+}

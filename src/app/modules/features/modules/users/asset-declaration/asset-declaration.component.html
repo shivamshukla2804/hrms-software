@@ -1,0 +1,35 @@
+<section>
+    <div class="request">
+        <div class="request_button">
+            <button mat-button (click)="formToggle=!formToggle" class="btn_flat">+ {{'Add new asset declaration'|titlecase}}</button>
+        </div>
+        <form [formGroup]="assetDeclarationForm" (ngSubmit)="onSubmit()" *ngIf="formToggle">
+            <div class="row 1">
+                <app-common-input [label]=" 'Employee IdAI1580' " [inputFormControl]="getControl('emp_id')" ></app-common-input>
+                <app-common-input [label]=" 'Unique Asset Code' " [inputFormControl]="getControl('unique_asset_code')" ></app-common-input>
+                <app-common-input [label]=" 'Serial Number ' " [inputFormControl]="getControl('serial_no')" ></app-common-input>
+                <app-common-input [label]=" 'Model Number ' " [inputFormControl]="getControl('model_no')" ></app-common-input>
+                <app-common-dropdown [label]="'os'" [data]="assetCategory" [dropdownDownControlName]="getControl('os')" ></app-common-dropdown>
+                <app-common-input [label]=" 'OS version' " [inputFormControl]="getControl('os_version')" ></app-common-input>
+                <app-common-input [label]=" 'Brand'" [inputFormControl]="getControl('brand')" ></app-common-input>
+                <app-common-input [label]=" 'Color'" [inputFormControl]="getControl('colour')" ></app-common-input>
+                <app-common-dropdown [label]="'Device is in working condition?'" [data]="quantity" [dropdownDownControlName]="getControl('device_working_condition')" ></app-common-dropdown>
+            </div>
+            <div class="file_input">
+                <app-common-file-input [fileType]="'.jpeg,.png,.jpg,.gif'" [inputFormControl]="getControl('asset_image')" [label]="'Asset Image(Allowed Format: jpg,jpeg,JPEG,JPG,png,PNG,GIF)'" [labelSuggestation]="' Upload front and backside image*'" ></app-common-file-input>
+            </div>
+            <div class="action">
+                <button mat-raised-button class="btn_primary" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div class="main">
+
+        <div class="header">
+            <h3 class="heading">List All Declaration Assets</h3>
+        </div>
+        <div class="table">
+            <app-common-table [columns]="columns" [dataSourceForTable]="dataSource"></app-common-table>
+        </div>
+    </div>
+</section>

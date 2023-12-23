@@ -1,0 +1,19 @@
+@import 'src/scss/buttons.scss';
+@import 'src/app/modules/features/modules/freshers/my-trainings/my-trainings.component.scss';
+
+section {
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .heading {
+            // font-size: 1.5rem;
+            // color: #199CFF;
+            // font-weight: 500;
+            // line-height: 1.2;
+            margin-bottom: 0;
+        }
+    }
+
+}

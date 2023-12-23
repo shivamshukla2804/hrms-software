@@ -1,0 +1,58 @@
+<section>
+    <form [formGroup]="addPitchForm" (ngSubmit)="onSubmit()">
+        <div class="header">
+            <h3 class="heading">Add Pitch</h3>
+            <div class="actions">
+                <button type="reset" class="btn_cancel" mat-raised-button>Cancel</button>
+                <button type="submit" class="btn_primary" mat-raised-button>Submit</button>
+            </div>
+        </div>
+        <div class="main">
+            <div class="hash_heading">
+                <h3 class="heading_text">{{ labelMessage.MY_DETAILS }}</h3>
+            </div>
+            <div class=" first">
+                <div class="formfield 1">
+           
+                <app-common-input [labelStyle]="'light'" [label]="labelMessage.NAME" [inputFormControl]="getControl('name')"></app-common-input>
+
+                </div>
+            </div>
+            <div class="inputs">
+
+                <div class="formfield 2">
+                  
+                <app-common-input [labelStyle]="'light'" [label]="labelMessage.EMP_ID" [inputFormControl]="getControl('employee_id')"></app-common-input>
+
+                </div>
+                <div class="formfield 3">
+                 
+                <app-common-input [labelStyle]="'light'" [label]="labelMessage.DOB" [inputFormControl]="getControl('DOB')"></app-common-input>
+
+                </div>
+            </div>
+
+            <div class="hash_heading">
+                <h3 class="heading_text">{{ labelMessage.PITCH_DETAILS }}</h3>
+            </div>
+            <div class="formfield 1">
+                <app-common-input [labelStyle]="'light'" [label]="labelMessage.PITCH_TITLE" [inputFormControl]="getControl('pitch_title')"></app-common-input>
+            </div>
+            <div class="formfield 1">
+                <app-common-input [labelStyle]="'light'" [label]="labelMessage.INDUSTRY" [inputFormControl]="getControl('industry')"></app-common-input>
+            </div>
+            <div class="formfield 5">
+                <app-common-input [labelStyle]="'light'" [label]="labelMessage.TYPE" [inputFormControl]="getControl('type')"></app-common-input>
+            </div>
+            <div class="formfield 6">
+                <app-common-text-editor [labelStyle]="'light'" [label]="labelMessage.IDEA" [inputFormControl]="getControl('idea')" ></app-common-text-editor>
+            </div>
+            <div class="formfield 7">
+           
+                <app-common-file-input [labelStyle]="'light'" [label]=" labelMessage.PRESENTATION" [inputFormControl]="getControl('presentation')"></app-common-file-input>
+
+            </div>
+
+        </div>
+    </form>
+</section>

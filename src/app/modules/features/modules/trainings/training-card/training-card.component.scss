@@ -1,0 +1,112 @@
+@import "src/scss/buttons.scss";
+
+
+.job_details {
+    border: 1px solid rgba(150, 165, 184, 0.3);
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    // max-width: 30rem;
+    // min-width: 15rem;
+    .job_logo {
+        border-radius: 10px;
+        background-color: #f3f7fc;
+
+        figure {
+            min-height: 180px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+    }
+
+    .job_title {
+        padding: 10px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h4 {
+            font-size: 16px;
+            color: #000000;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+        .badge{
+            display: inline-block;
+            padding: 0.25em 0.417em;
+            font-size: .858em;
+            font-weight: 500;
+            line-height: 1;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: baseline;
+            border-radius: 0.125rem;
+        }
+        .success {
+            background-color: var(--success-color);
+            color: #fff;
+        }
+        .failure{
+            background-color: var(--danger-color);
+            color: #fff;
+        }
+    }
+
+    .job_exp_opening {
+        border-bottom: 1px solid rgba(150, 165, 184, 0.5);
+        border-top: 1px solid rgba(150, 165, 184, 0.5);
+
+        p {
+            font-size: 10px;
+            color: #606167;
+            font-weight: 400;
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        h4 {
+            font-size: 16px;
+            color: #000000;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        .timing {
+
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+
+
+        }
+    }
+
+    .actions {
+        display: flex;
+        // justify-content: space-between;
+        padding: 0.9rem 0 0 0;
+        align-items: center;
+        .view_details,
+        .refer {
+            padding: 0.8rem;
+            width: 100%;
+            margin:0.3rem;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 1300px) {
+    .heading_wraper {
+        padding: 0;
+    }
+
+    .actions {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+}

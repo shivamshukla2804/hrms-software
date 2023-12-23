@@ -1,0 +1,26 @@
+<section>
+    <mat-card>
+        <img src="/assets/mylogo.png" alt="logo" />
+
+        <mat-card-content>
+            <ng-container *ngIf="!loginWithGoogle">
+                <app-login-with-credential [loginForm]="loginForm" class="form"> </app-login-with-credential>
+            </ng-container>
+
+            <ng-container *ngIf="loginWithGoogle">
+                <app-login-with-google></app-login-with-google>
+            </ng-container>
+        </mat-card-content>
+
+        <mat-card-actions>
+            <button mat-raised-button (click)="loginWithGoogle = !loginWithGoogle">
+                LOGIN WITH {{ loginWithGoogle ? "CREDENTIAL" : "GOOGLE" }}
+            </button>
+        </mat-card-actions>
+
+        <div class="bottom_text">
+            <p class="text">2023 © Employee HR System</p>
+        </div>
+
+    </mat-card>
+</section>

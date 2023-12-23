@@ -1,0 +1,81 @@
+<section>
+    <div class="leave_status">
+        <div class="names">
+            <span class="name">
+                1 : Petter
+            </span>
+            <span class="name">
+                2 : HR (Human Resourse)
+            </span>
+        </div>
+        <div class="progress_bar" style="background:red"></div>
+    </div>
+    <div class="main">
+
+        <div class="table_container">
+            <div class="header">
+                <h3 class="heading">Leave Details</h3>
+            </div>
+            <table class="table">
+                <tbody>
+                    <ng-container *ngFor="let head of heading">
+
+                        <tr>
+                            <th scope="row" style="border-top:0px;">{{head.heading}}</th>
+                            <td class="text-right">{{Table_DATA[head.key]}}</td>
+                        </tr>
+                    </ng-container>
+
+                    <tr>
+                        <th scope="row">Uploaded Document</th>
+                        <td class="text-right">
+                            <span data-toggle="tooltip" data-placement="top" title="Download">
+                                <a>
+                                    <!-- <button type="button" class="btn icon-btn btn-xs btn-outline-info waves-effect waves-light"> -->
+                                    <mat-icon>download</mat-icon>
+                                    <!-- </button> -->
+                                </a>
+                            </span>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <div class="reason">
+                <label class="heading" for="remarks">Reason</label><br>
+                &nbsp;<b>
+                    <p>Hello Sir/Mam</p>
+                    <p><br></p>
+                    <p><br></p>
+                    <p>I am taking short leave&nbsp; due to having cough and cold , and going to take medicines.</p>
+                    <p><br></p>
+                    <p>So kindly allow me short leave.</p>
+                </b>
+            </div>
+        </div>
+        <div class="approve_container">
+            <div class="approve_status">
+
+                <div class="header">
+                    <h3 class="heading">Approval Status</h3>
+                </div>
+
+                <div class="card_body">
+                    <div class="card-block card-dashboard">
+                        <div id="leave-statistics">
+                            <!-- <p><strong>Reporting Manager</strong>&nbsp; -->
+                            <p><strong>Petter </strong>&nbsp;
+                                Pending </p>
+                        </div>
+                        <div id="leave-statistics">
+                            <!-- <p><strong>HR (Human Resourse)</strong>&nbsp; -->
+                            <p><strong>HR (Human Resourse)</strong>&nbsp;
+                                Pending </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

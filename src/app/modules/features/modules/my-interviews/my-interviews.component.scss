@@ -1,0 +1,15 @@
+@import 'src/app/modules/features/modules/my-links/policy-documents/policy-documents.component.scss';
+section{
+    .main{
+        background-color: #fff;
+        padding: 1rem;
+        border-radius: 10px;
+        .filter{
+            
+            display: grid;
+            grid-template-columns: auto auto;
+            gap: 2rem;
+            width: 50%;
+        }
+    }
+}

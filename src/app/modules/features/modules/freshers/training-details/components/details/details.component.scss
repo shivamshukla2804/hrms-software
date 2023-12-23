@@ -1,0 +1,63 @@
+@import 'src/scss/table.scss';
+section {
+    .row {
+        padding: 0.875rem 0.5rem;
+        .header {
+            border-bottom: 1px solid rgba(150, 165, 184, 0.5);
+            padding: 0 0 15px 0;
+            .heading {
+                font-size: 18px;
+                color: #231E1E;
+                // font-weight: 500;
+                line-height: 1.32;
+                margin-bottom: 0;
+            }
+
+        }
+        .inside_row  {
+            margin: 0.5rem;
+    
+            .form_data {
+                display: flex;
+                align-items: center;
+                color: #606167;
+                font-weight: 400;
+                line-height: 1.5;
+                margin: 0 10px 0 0;
+                padding: 6px 0;
+    
+                .text_primary {
+                    color: #199CFF;
+                }
+    
+                p {
+                    margin: 0;
+                    color: #000;
+                }
+    
+                label {
+                    min-width: 160px;
+                }
+            }
+            .data{
+                display: grid;
+                grid-template-columns: auto auto;
+            }
+            // .title {
+            //     display: flex;
+            //     // justify-content: space-between;
+            // }
+    
+        }
+        .description{
+            background-color: #F4F8FF;
+            padding: 24px;
+            border-radius: 4px;
+            margin-top: 15px;
+        }
+            ::ng-deep {
+                .table {
+                    border: none;
+        }}
+    }
+}

@@ -1,0 +1,58 @@
+@import 'src/scss/buttons.scss';
+section {
+    .header {
+        // background: gainsboro;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-top: -24px;
+        margin-left: -24px;
+        margin-right: -24px;
+        margin-bottom: 2rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+        .heading {
+            padding: 16px;
+            font-size: 1.3rem;
+            color: #000;
+            font-weight: 500;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        // .cancel_icon {
+        //     margin-right: 10px;
+        //     background-color: #fff;
+        //     border-radius: 50%;
+        //     padding: 5px;
+        //     cursor: pointer;
+
+        //     .icon {
+        //         display: flex;
+        //         justify-content: center;
+        //         align-items: center;
+        //         font-size: 20px;
+        //     }
+        // }
+    }
+    .main{
+        width:35rem;
+        .mat-form-field{
+            width: inherit;
+        }
+    }
+    .cancel{
+        margin-right: 15px;
+    }
+   button[disabled]{
+    background: #adb3df;
+        cursor: not-allowed;
+   }
+
+}
+
+// :host::ng-deep {
+
+//     .mat-dialog-container {
+//         width: 35rem;
+//     }
+// }

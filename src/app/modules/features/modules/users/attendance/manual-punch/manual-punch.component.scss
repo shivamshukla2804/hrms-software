@@ -1,0 +1,67 @@
+@import 'src/scss/buttons.scss';
+@import 'src/scss/dashbord-card-heading.scss';
+
+
+section {
+    padding: 0.5rem 1rem;
+
+    .container {
+        display: grid;
+        grid-template-columns: 30% 70%;
+        gap: 1rem;
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 11px 25px 11px 15px;
+            background-color: #fff;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+            border-bottom: 1px solid #e6e7e9;
+            // margin-bottom: 1rem;
+
+            .heading {
+                color: var(--header-text-color);
+                margin: 0;
+            }
+        }
+
+        .left {
+            background-color: #fff;
+            border-radius: 5px;
+
+            .main {
+                padding: 1rem;
+                margin-top: 1rem;
+            }
+
+        }
+
+        .right {
+            // padding: 1rem;
+            border-radius: 5px;
+
+            .main {
+                background-color: #fff;
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+
+                padding: 1rem;
+
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width: 880px) {
+    section {
+
+        .container {
+            
+            grid-template-columns: auto;
+           
+        }
+    }
+}

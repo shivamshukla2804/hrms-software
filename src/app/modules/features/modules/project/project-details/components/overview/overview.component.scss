@@ -1,0 +1,91 @@
+section {
+    .row {
+
+        background-color: #fff;
+        margin: 1rem auto;
+        border-radius: 11px;
+        padding: 0.5rem;
+    }
+
+    .exp_panel_wraper {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 2rem;
+
+        .exp_panel {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            flex-wrap: wrap;
+
+            .panel {
+                width: 100%;
+
+                .letter {
+                    margin: 0;
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 7px;
+                    background-color: #3246d3;
+                    font-size: 31px;
+                    font-weight: 600;
+                    color: #fff;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+
+            &:first-child {
+                border-top-right-radius: 4px;
+                border-top-left-radius: 4px;
+            }
+
+            &:last-child {
+                border-bottom-left-radius: 4px;
+                border-bottom-right-radius: 4px;
+            }
+        }
+
+    }
+
+    ::ng-deep {
+        .mat-expansion-panel {
+            border-radius: 0px;
+        }
+
+        .mat-expansion-panel-header {
+            min-height: 60px;
+            padding: 10px 13px;
+            border-bottom: 1px solid rgba(24, 28, 33, 0.06);
+            border-radius: none;
+
+            .text {
+                display: flex;
+                align-items: center;
+
+                .inner {
+                    margin-left: 10px;
+
+                    .no_doc {
+                        font-size: 16px;
+                        color: #9a9c9c;
+                        text-transform: capitalize;
+                        word-wrap: break-word;
+                        text-align: left;
+                        white-space: normal;
+                    }
+
+                    .heading {
+                        margin: 0;
+                        text-align: left;
+                        font-size: 22px;
+                        font-weight: 500;
+                        color: #2f3031;
+                        text-transform: capitalize;
+                    }
+                }
+            }
+        }
+    }
+}

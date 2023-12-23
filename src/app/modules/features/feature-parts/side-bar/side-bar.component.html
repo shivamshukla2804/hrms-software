@@ -1,0 +1,7 @@
+<section>
+    <mat-nav-list class="mat_side_list">
+        <ng-container *ngFor="let item of sideNavList">
+            <app-list-item [item]="item"  [isShowing]="isShowing"></app-list-item>
+        </ng-container>
+    </mat-nav-list>
+</section>

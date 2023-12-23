@@ -1,0 +1,20 @@
+<section>
+    <h3 class="heading">New Family Members</h3>
+
+    <div class="new_member_card">
+
+        <app-carousel [actionButtons]="true" [listToShow]="dataSource" [carouselConfig]="carouselConfig" [left_buttonPosition]="'newFamily_leftRs'" [right_buttonPosition]="'newFamily_rightRs'" ></app-carousel>
+
+        <ng-container *ngFor="let member of listOfNewFamilyMembers">
+            <ng-template #listofDivs>
+                <div class="item">
+                    <figure>
+                        <img src="/assets/default_male.jpg" alt="new_member">
+                        <h3>New Member</h3>
+                        <p>Designition of Member</p>
+                    </figure>
+                </div>
+            </ng-template>
+        </ng-container>
+    </div>
+</section>

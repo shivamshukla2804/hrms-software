@@ -1,0 +1,19 @@
+<section>
+
+    <div class="header">
+        <h3 class="heading">Add Tags</h3>
+       </div>
+    <div class="main">
+        <mat-form-field  appearance="outline">
+            <input matInput [formControl]="inputValue" placeholder="Enter Tag" maxlength="10" />
+            <mat-error *ngIf="inputValue.invalid">Tag is required </mat-error>
+
+        </mat-form-field>
+    </div>
+    <div class="action">
+        <button  mat-button class="project_btn cancel" (click)="onNoClick()">Cancel</button>
+        <button mat-button class="save project_btn" [mat-dialog-close]="inputValue.value"   [disabled]="inputValue.invalid">
+            Add
+        </button>
+    </div>
+</section>

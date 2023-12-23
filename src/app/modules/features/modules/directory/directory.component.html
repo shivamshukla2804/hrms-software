@@ -1,0 +1,64 @@
+<section>
+    <div class="basic_card">
+        <div class="header">
+            <h3 class="header_text">{{uiText.MODULE_HEADING}}</h3>
+        </div>
+        <form [formGroup]="filterForm" (ngSubmit)="filter()">
+            <div class="filter">
+                <div class="formfield 4">
+                    <label class="label">{{uiText.NAME}}</label>
+                    <mat-form-field appearance="outline">
+                        <input matInput [placeholder]="uiText.SEARCH_PLACEHOLDER" formControlName="name">
+                        <mat-error>{{ getControl("name") | validate : uiText.NAME}}</mat-error>
+
+                    </mat-form-field>
+                </div>
+                <div class="formfield 4">
+                    <label class="label">{{uiText.DEPARTMENT}}</label>
+                    <mat-form-field appearance="outline">
+                        <mat-select formControlName="technology">
+                            <mat-option *ngFor="let item of departments " [value]="item">
+                                {{item}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error>{{ getControl("technology") | validate : uiText.DEPARTMENT }}</mat-error>
+
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="actions">
+
+                <button type="reset" (click)="reset()" mat-raised-button class="reset btn_cancel">{{uiText.RESET}}</button>
+                <button type="submit" mat-raised-button class="btn_primary">
+                    <mat-icon class="icon">search</mat-icon>
+                    {{uiText.BUTTON_TEXT}}</button>
+            </div>
+        </form>
+    </div>
+    <div class="employees">
+        <h3 *ngIf="directoryDataList.length==0">No Data Found </h3> 
+        <ng-container *ngFor="let emp of directoryDataList">
+
+            <div class="emp_details_card">
+                <figure>
+                    <img [src]=[emp.IMAGE] alt="emp Image">
+                </figure>
+                <div class="basic_details">
+                    <h3 class="name">{{emp.EMP_NAME|titlecase}}</h3>
+                    <h4 class="designation">{{emp.EMP_DESIGNATION}}-{{emp.EMP_TECHNOLOGY}}</h4>
+                </div>
+                <div class="common_details">
+                    <p>
+                        <mat-icon>alternate_email</mat-icon>
+                        <span>{{emp.EMAIL}}</span>
+                    </p>
+                    <p>
+                        <mat-icon>cake</mat-icon>
+                        <span>{{emp.BIRTH_DATE}}, {{emp.BIRTH_MONTH}}</span>
+                    </p>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+
+</section>

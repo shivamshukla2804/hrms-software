@@ -1,0 +1,20 @@
+<section>
+  <header>
+    <app-header [smallWindow]="smallWindow" (stateChange)="updateIsExpanded($event)"></app-header>
+  </header>
+  <mat-sidenav-container autosize>
+    <mat-sidenav #sidenav="matSidenav" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+      <app-side-bar [isShowing]="isShowing" [isExpanded]="isExpanded"></app-side-bar>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <main>
+        <router-outlet></router-outlet>
+      </main>
+      <footer>
+        <span class="footer_text"> 2023 © XYZ HR System v1.0.6</span>
+      </footer>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  <button class="covid_19" mat-raised-button> Covid 19 - Desk</button>
+
+</section>

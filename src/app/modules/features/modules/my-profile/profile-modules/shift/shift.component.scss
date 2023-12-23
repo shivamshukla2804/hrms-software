@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section {
+    background-color: #fff;
+
+    .header {
+        border-bottom: 1px solid #f3f7fc;
+
+        .heading {
+            font-size: 20px;
+            color: #3246d3;
+            padding: 11px 25px 11px 15px;
+            font-weight: 600;
+        }
+    }
+        ::ng-deep {
+            .table {
+                table {
+                    padding: 1.5rem;
+                    th{
+                        border: 1px solid #f1f1f2 !important;
+                        padding-left: 10px;
+                    }
+                    td {
+                        border: 1px solid #f1f1f2 !important;
+                        padding-left: 10px;
+
+                        background-color: #fff5f5 !important;
+                    }
+                }
+
+            }
+        }
+
+}

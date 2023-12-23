@@ -1,0 +1,12 @@
+<div class="formfield 2" *ngIf="inputFormControl">
+  <label class="label" [ngClass]="labelStyle">{{label|titlecase}}</label>
+  <mat-form-field appearance="outline" [ngClass]="formfieldCSS">
+    <mat-select [formControl]="$any(inputFormControl)">
+      <input [formControl]="myControl" class="filter">
+      <mat-option *ngFor="let item of filteredOptions | async" [value]="item" [disabled]="item=='no results Found'">
+        {{item}}
+      </mat-option>
+    </mat-select>
+    <mat-error>{{ inputFormControl | validate : label }}</mat-error>
+  </mat-form-field>
+</div>

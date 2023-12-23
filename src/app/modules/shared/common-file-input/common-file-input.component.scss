@@ -1,0 +1,36 @@
+.formfield {
+    display: flex;
+    flex-direction: column;
+
+
+    .label {
+        font-weight: 500;
+        color: #2f3031;
+    }
+
+    .dark {
+        font-weight: 500;
+        color: #2f3031;
+    }
+
+    .light {
+        font-size: 0.85rem;
+        color: #96a5b8;
+        line-height: 1.4;
+    }
+
+    .warn {
+        color: var(--danger-color);
+    }
+
+    .field {
+        position: relative;
+
+        .inner {
+
+            position: absolute;
+            left: 7px;
+            top: 7px;
+        }
+    }
+}

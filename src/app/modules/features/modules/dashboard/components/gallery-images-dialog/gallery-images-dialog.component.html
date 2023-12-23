@@ -1,0 +1,12 @@
+<section>
+    <app-carousel  [actionButtons]="true" [listToShow]="dataSource" [carouselConfig]="carouselConfig" [left_buttonPosition]="'left_bottom'" [right_buttonPosition]="'right_bottom'" ></app-carousel>
+    <ng-container *ngFor="let item of data">
+  <ng-template #listofDivs>
+    <figure>
+
+      <img [src]="item" alt="RepublicDayIamge" class="imageResize">
+    </figure>
+  </ng-template>
+</ng-container>
+<mat-icon class="close" (click)="onNoClick()" >close</mat-icon>
+</section>

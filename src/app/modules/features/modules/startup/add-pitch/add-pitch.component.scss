@@ -1,0 +1,123 @@
+@import "src/scss/buttons.scss";
+@import "src/scss/dashbord-card-heading.scss";
+
+section {
+  form {
+    .header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1.4rem;
+      align-items: center;
+
+      .heading {
+        color: var(--primary-color);
+        font-size: 1.8rem;
+        margin: 0;
+      }
+      .actions {
+        display: flex;
+        align-items: center;
+
+        .btn_primary {
+          margin-left: 20px;
+        }
+      }
+    }
+
+    .main {
+      padding: 16px;
+      background-color: #fff;
+      border-radius: 7px;
+
+      .hash_heading {
+        position: relative;
+        background-color: #fff;
+        .heading_text {
+          font-size: 24px;
+          color: #606167;
+          background-color: #fff;
+          font-weight: 500;
+          line-height: 1.5;
+          padding: 4px 5px;
+          margin: 0 10px;
+          width: fit-content;
+        }
+    }
+    .heading_text::after {
+        content: "";
+        width:-webkit-fill-available;
+        height: 1px;
+        border-top: 1px dashed #96A5B8;
+        position: absolute;
+        transform: translateY(-50%);
+        bottom: 18px;
+
+    }
+    .heading_text::before {
+      content: "";
+      width:20px;
+      height: 1px;
+      border-top: 1px dashed #96A5B8;
+      position: absolute;
+      transform: translateY(-50%);
+      bottom: 18px;
+      left: -4px;
+
+  }
+
+
+
+      .first {
+        display: flex;
+
+        .formfield {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+        }
+      }
+
+      .inputs {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 20px;
+      }
+
+      .formfield {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .label {
+          font-size: 0.85rem;
+          color: #96a5b8;
+          line-height: 1.4;
+        }
+      }
+    }
+  }
+}
+
+::ng-deep {
+
+
+  .cdk-overlay-dark-backdrop {
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-flex {
+    box-shadow: 0px 4px 8px rgb(44 39 56 / 4%) !important;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  section {
+    form {
+      .main {
+        .inputs {
+          display: block;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+    <ng-container *ngTemplateOutlet=" data; context: { referalData: referalData  } ">
+    </ng-container>
+
+<ng-template #data let-referalData="referalData">
+    <div class="data">
+        <h2>{{referalData?.referralPrice}}K</h2>
+        <h3>Referral Bonus</h3>
+        <ng-container *ngIf="referalData.toYear=='last';else otherexp ">
+            <p>For {{referalData?.fromYear}}+  Years of experience</p>
+        </ng-container>
+        <ng-template #otherexp>
+            <p>For {{referalData?.fromYear}} to {{referalData.toYear}} Years of experience</p>
+
+        </ng-template>
+    </div>
+</ng-template>

@@ -1,0 +1,28 @@
+@import "src/scss/buttons.scss";
+@import "src/app/modules/features/modules/dashboard/components/latest-at-appinventiv/common-card/common-card.component.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+section{
+  .container{
+    height: 414px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+
+    .latest_appinv_cards_heading {
+      ::before {
+        background-color:#C136CD;
+      }
+    }
+    main{
+      width: 100%;
+    }
+   
+  }
+
+}

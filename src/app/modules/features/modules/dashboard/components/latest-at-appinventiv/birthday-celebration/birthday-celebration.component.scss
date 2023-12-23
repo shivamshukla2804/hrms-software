@@ -1,0 +1,118 @@
+// @import "src/scss/colors.scss";
+
+// $font-size: 12px;
+// $fontweight: 500;
+
+// section {
+//   height: 414px;
+//   width: 513px;
+//   overflow: hidden;
+//   border: 1px solid var(--border-color);
+//   border-radius: 5px;
+//   padding: 10px;
+//   margin: 10px;
+//   display: flex;
+//   justify-content: space-between;
+//   flex-direction: column;
+//   header {
+//     .award-header {
+//       ::before {
+//         content: "";
+//         height: 15px;
+//         width: 15px;
+//         background-color: var(--award-dot-color);
+//         border-radius: 50%;
+//         display: inline-block;
+//       }
+//       display: flex;
+
+//       .award-title {
+//         font-size: 20px;
+//       }
+//     }
+//   }
+//   main {
+//     // width: 25rem;
+//   overflow: hidden;
+
+//     .dear {
+//       color: black;
+//     }
+
+//     figure {
+//       overflow: hidden;
+      
+//       margin: 4px;
+//       border: 1px solid var(--border-color);
+//       position: relative;
+
+//       border-radius: 5px;
+//       // padding: 4px;
+//       width: 233px;
+//       height: 150px;
+//       img {
+//       border-radius: 5px;
+//         width: -webkit-fill-available;
+//       }
+
+//       .emp-info {
+//         position: absolute;
+//         width: 100%;
+//         bottom: 0;
+//         left: 0;
+//         font-size: $font-size;
+//         background: linear-gradient(
+//           180deg,
+//           rgba(22, 22, 22, 0) 0%,
+//           #151515 100%
+//         );
+//         padding-left: 10px;
+//         h3 {
+//           margin: 0;
+//           color: #fff;
+//         }
+//         p {
+//           font-family: "Lato";
+//           font-size: 12px;
+//           color: #96a5b8;
+//           font-weight: 500;
+//           line-height: 1.9;
+//           margin-bottom: 0;
+//         }
+
+//         .emp-name {
+//           color: black;
+//           font-weight: 700;
+//         }
+
+//         .emp-designation {
+//           color: black;
+//           font-weight: $fontweight;
+//           margin-bottom: 0px !important;
+//         }
+
+//         .emp-date {
+//           color: black;
+//           font-weight: $fontweight;
+//         }
+//       }
+//     }
+
+//     .message {
+//       padding: 30px 0px;
+//       font-size: $font-size;
+//     }
+//   }
+//   footer {
+//     .cheers {
+//       color: black;
+//     }
+
+//     .company-name {
+//       font-size: $font-size;
+//       color: black;
+//       font-weight: $fontweight;
+//       margin-top: -10px;
+//     }
+//   }
+// }

@@ -1,0 +1,77 @@
+@import 'src/scss/buttons.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+
+    .container {
+      display: grid;
+      grid-template-columns: 50% 50%;
+        width: 80%;
+
+        .left {
+            padding-top: 8%;
+            padding-right: 20px;
+
+            .hero_paragraph {
+                color: #000;
+                font-size: 0.8rem;
+                margin-bottom: 32px;
+            }
+
+            .hero_title {
+                color: #000;
+                font-size: 1.563rem;
+                margin-bottom: 16px;
+            }
+
+            .name {
+                font-size: 1.8rem;
+            }
+
+            li {
+                list-style-type: disc;
+                padding: 10px 0;
+                margin-left: 20px;
+            }
+        }
+
+        .right {
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+            .back_ground_img{
+                img{
+                    width: 100%;
+                    height: 100vh;
+
+                }
+            }
+            .main_img {
+                position: absolute;
+                top: 90px;
+                right: 120px;
+
+                img {
+                    width: 85%;
+                    margin: 0 auto;
+                    box-shadow: 48px 16px 48px rgb(24 37 56 / 12%);
+                    border-radius: 4px;
+                    -webkit-transform: perspective(1000px) rotateY(16deg) rotateX(2deg) rotateZ(-7deg) scaleY(0.95) translatex(2%);
+                    transform: perspective(1000px) rotateY(16deg) rotateX(2deg) rotateZ(-7deg) scaleY(0.95) translatex(2%);
+                }
+            }
+        }
+        @media only screen and (max-width: 1000px) {
+            grid-template-columns: auto;
+
+           
+        }
+    }
+}

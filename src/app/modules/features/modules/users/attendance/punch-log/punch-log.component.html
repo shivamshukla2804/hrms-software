@@ -1,0 +1,23 @@
+<section>
+    <div class="container">
+        <div class="left">
+            <div class="header">
+                <h3 class="heading">Punch Log</h3>
+            </div>
+            <div class="main">
+                <app-common-input [label]="'Date'" [inputFormControl]="punchRequest"></app-common-input>
+                <app-common-dropdown [label]="'Company'" [dropdownDownControlName]="company"
+                    [data]="['XYZ Technologies']"></app-common-dropdown>
+                <button mat-raised-button class="btn_primary">Get</button>
+            </div>
+        </div>
+        <div class="right">
+            <div class="header">
+                <h3 class="heading">Punch Log</h3>
+            </div>
+            <div class="main">
+                <app-common-table [columns]="columns" [dataSourceForTable]="dataSource"></app-common-table>
+            </div>
+        </div>
+    </div>
+</section>

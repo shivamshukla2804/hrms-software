@@ -1,0 +1,12 @@
+<section>
+    <div class="header">
+        <h3 class="heading" >My Trainings</h3>
+        <button mat-raised-button class="btn_primary" (click)="requestTraining()">+ Request for training</button>
+    </div>
+    <div class="main">
+        <ng-container *ngFor=" let item of trainingData">
+
+            <app-training-card [data]="item" ></app-training-card>
+        </ng-container>
+    </div>
+</section>

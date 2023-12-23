@@ -1,0 +1,24 @@
+@import 'src/scss/dashbord-card-heading.scss';
+
+section{
+    background-color: #fff;
+    border-radius: 5px;
+    .header{
+        padding: 0.8rem 1rem;
+        .heading{
+            color: var(--header-text-color);
+            border-bottom: 1px solid #ececec;
+
+        }
+    }
+    
+    ::ng-deep{
+        
+        table{
+            th,td{
+                border :1px solid #f6f7f8 !important;
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,32 @@
+<section>
+    <div class="header">
+        <h3 class="heading">Trainee Project Angular</h3>
+        <div class="projectTagsWrapper">
+            <div class="tagHeader">
+                <h4>Project Tags/label</h4>
+                <button type="button" class="btn project_add_btn" data-toggle="modal" data-target="#projectTags" (click)="addTag()">+</button>
+            </div>
+                <div class="badgeWrapper">
+                    <ul>
+                        <ng-container *ngFor="let chip of chips">
+                            <li class="tech_badge node"> #{{chip}}</li>
+                        </ng-container>
+                    </ul>
+            </div>
+        </div>
+    </div>
+    <div class="tabs_wrapper">
+        
+        <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+            <mat-tab label="Overview">
+                <app-overview></app-overview>
+            </mat-tab>
+            <mat-tab label="Notes">
+                <app-notes></app-notes>
+            </mat-tab>
+            <mat-tab label="DSR Reports">
+                <app-dsr-reports></app-dsr-reports>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</section>

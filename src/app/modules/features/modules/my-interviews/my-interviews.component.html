@@ -1,0 +1,15 @@
+<section>
+    <div class="header">
+        <h3 class="heading"> List All Candidates</h3>
+    </div>
+    <div class="main">
+        <div class="filter">
+            <app-common-dropdown [label]="'Department'" [data]="techList" [dropdownDownControlName]="department" ></app-common-dropdown>
+            <app-common-dropdown [label]="'Status'" [data]="status" [dropdownDownControlName]="technology" ></app-common-dropdown>
+
+        </div>
+        <div class="table">
+        <app-common-table [pagination]="true"  [columns]="columns" [dataSourceForTable]="dataSource"></app-common-table>
+        </div>
+    </div>
+</section>

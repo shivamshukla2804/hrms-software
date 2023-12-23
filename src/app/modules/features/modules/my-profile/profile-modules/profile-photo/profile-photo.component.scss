@@ -1,0 +1,63 @@
+// @import "../../../../../scss/var";
+// @import "../../../../../scss/job-opening-button";
+// @import "../../../../../scss/mixins.scss";
+
+@import 'src/scss/buttons.scss';
+
+section {
+    background-color: #fff;
+  .basic-card {
+    padding: 0px !important;
+
+    .header {
+      border-bottom: 1px solid var(--border-color);
+      .header-text {
+        color: var(--profile-heading-color);
+        font-size: 20px;
+        padding: 11px 25px 11px 15px;
+        font-weight: 500;
+      }
+    }
+ 
+    .formgroup{
+      padding: 20px;
+      .form{
+        .container-1{
+          .browse{
+            font-weight: 500;
+          }
+        }
+        position: relative;
+        .profilePreviewImg {
+          width: 100px;
+          height: 70px;
+          border: 1px solid #e3e3e3;
+          padding: 2px;
+          margin-top: 20px;
+          border-radius: 5px;
+        }
+        .remove{
+          position: absolute;
+          top: 91px;
+          font-size: 15px;
+          left: 95px;
+          cursor: pointer;
+        } 
+        .remove-pic{
+          display: flex;
+          align-items: baseline;
+        //   @include fpos(baseline,'');
+          gap: 10px;
+          margin:10px 0px 10px 0px;
+          .remove-value{
+            font-weight: 500
+          }
+        }
+        // .saveButton {
+        //   @include buttonTransparent();
+        //   color: $button-text-color;
+        // }
+      }
+    }
+  }
+}

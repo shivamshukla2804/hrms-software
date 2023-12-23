@@ -1,0 +1,93 @@
+<section>
+  <div class="header" >
+    <h3  class="heading">{{ labelMessage.HEADER_VALUE }}</h3>
+    <div class="cancel_icon" (click)="onNoClick()">
+      <mat-icon class="icon">close</mat-icon>
+    </div>
+  </div>
+  <div class="form">
+    <div class="hash_heading">
+      <h3 class="mydetails">{{ labelMessage.JOB_DETAIL_VALUE }}</h3>
+    </div>
+    <form [formGroup]="referCandidateForm" (ngSubmit)="onSubmit()">
+      <div class="inputs">
+        <div class="formfield 1">
+                <app-common-input [labelStyle]="'light'" [label]="labelMessage.JOB_DETAIL_VALUE " [inputFormControl]="getControl('department_name')"  ></app-common-input>
+        </div>
+
+        <div class="formfield 2">
+      
+          <app-common-input [labelStyle]="'light'" [label]="labelMessage.LABEL_JOBCODE" [inputFormControl]="getControl('job_code')"></app-common-input>
+
+        </div>
+        <div class="formfield 3">
+
+          <app-common-input [labelStyle]="'light'" [label]="labelMessage.LABEL_LOCATION" [inputFormControl]="getControl('location')"></app-common-input>
+
+        </div>
+        <div class="formfield 4">
+    
+          <app-common-input [labelStyle]="'light'" [label]="labelMessage.LABEL_EXPERIENCE" [inputFormControl]="getControl('experience')"></app-common-input>
+
+        </div>
+      </div>
+      <div class="hash_heading">
+        <h3 class="mydetails">{{ labelMessage.CANDIDATE_VALUE }}</h3>
+      </div>
+      <div class="inputs">
+        <div class="formfield 11">
+  
+          <app-common-input [labelStyle]="'light'" [label]="labelMessage.LABEL_JOBLOC" [inputFormControl]="getControl('job_location')"></app-common-input>
+
+        </div>
+        <div class="formfield 5">
+ 
+          <app-common-input [labelStyle]="'light'" [label]="labelMessage.LABEL_CANDIDATE_NAME" [inputFormControl]="getControl('candidate_name')"></app-common-input>
+
+        </div>
+        <div class="formfield 6">
+              <app-common-input [labelStyle]="'light'" [label]="labelMessage.LABEL_POSITION" [inputFormControl]="getControl('position_title')"></app-common-input>
+
+        </div>
+        <div class="formfield 7">
+
+          <app-common-input [labelStyle]="'light'" [label]="labelMessage.LABEL_EXPERIENCE" [inputFormControl]="getControl('candidate_experience')"></app-common-input>
+
+        </div>
+        <div class="formfield 8">
+ 
+          <app-common-input [labelStyle]="'light'" [label]="labelMessage.LABEL_EMAIL" [inputFormControl]="getControl('email')"></app-common-input>
+
+        </div>
+        <div class="formfield 9">
+        
+          <app-common-input [labelStyle]="'light'" [label]="labelMessage.LABEL_PHONE" [inputFormControl]="getControl('contact_number')"></app-common-input>
+
+        </div>
+        <div class="formfield">
+     
+          <app-common-file-input [fileType]="'.pdf,.jpeg,.jpg'"  [labelStyle]="'light'" [label]=" labelMessage.LABEL_UPLOAD" [inputFormControl]="getControl('cv')"></app-common-file-input>
+
+        </div>
+        <div class="formfield 12">
+          <!-- <label class="label">{{ labelMessage.LABEL_SKILL }}</label>
+          <mat-form-field appearance="outline">
+            <textarea [maxLength]="200" #textarea matInput formControlName="skill"></textarea>
+            <mat-error>{{ getControl("skill") | validate : labelMessage.LABEL_SKILL }}</mat-error>
+
+          </mat-form-field>
+          <p class="maxlength">
+            {{textarea.value.length}}/{{200}}</p> -->
+
+            <app-common-text-area [row]="1" [column]="10" [label]="labelMessage.LABEL_SKILL" [labelStyle]="'light'" [inputFormControl]="getControl('skill')" ></app-common-text-area>
+        </div>
+      </div>
+      <div class="buttonGroup">
+        <button class="btn_cancel" (click)="onNoClick()" mat-raised-button>
+          {{ labelMessage.BUTTON_CANCEL }}
+        </button>
+        <button class="btn_primary" type="submit" mat-raised-button>{{ labelMessage.BUTTON_SUBMIT }}</button>
+      </div>
+    </form>
+  </div>
+</section>

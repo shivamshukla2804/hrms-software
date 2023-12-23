@@ -1,0 +1,91 @@
+@mixin button_style {
+  bottom: 0;
+  color: var(--caurosel-button-color);
+  background-color: #f1f1f1;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: none;
+}
+
+
+.newFamily_leftRs {
+  top: -64px;
+  right: 20px;
+  position: absolute;
+  @include button_style;
+}
+
+.newFamily_rightRs {
+  right: -20px;
+  top: -64px;
+  position: absolute;
+  @include button_style;
+}
+
+
+.gallery_leftRs {
+  position: absolute;
+  top: -46px;
+  right: 60px;
+  bottom: 0;
+  @include button_style;
+}
+
+
+
+.gallery_rightRs {
+  position: absolute;
+  top: -46px;
+  right: 20px;
+  @include button_style;
+
+}
+
+.left_bottom{
+  @include button_style;
+  position: absolute;
+  left: 46%;
+  bottom: -10px;
+
+}
+.right_bottom{
+  @include button_style;
+  position: absolute;
+  bottom: -10px;
+  right: 46%;
+
+}
+:host::ng-deep {
+
+  .ngucarousel {
+    position: initial !important;
+    overflow: hidden;
+  }
+}
+
+.myPoint {
+  list-style-type: none;
+  padding: 12px;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+  overflow: auto;
+  text-align: center;
+}
+
+.myPoint li {
+  display: inline-block;
+  border-radius: 50%;
+  background: #D6D6D6;
+  padding: 4px;
+  margin: 0 3px;
+  transition-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  transition: 0.4s;
+}
+
+.myPoint li.active {
+  background: #6b6b6b;
+  transform: scale(1.2);
+}

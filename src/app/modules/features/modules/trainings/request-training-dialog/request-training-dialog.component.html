@@ -1,0 +1,52 @@
+<section>
+    <div class="header">
+        <h3 class="heading">{{requestTraining.heading |titlecase}} </h3>
+        <div class="cancel_icon" (click)="onNoClick()">
+            <mat-icon class="icon">close</mat-icon>
+        </div>
+    </div>
+    <div class="main">
+        <form [formGroup]="trainingRequestForm" (ngSubmit)="onSubmit()">
+            <div class="form_data">
+                <app-common-dropdown [labelStyle]="'light'" [label]="requestTraining.team_name" [data]="trainingNames" [dropdownDownControlName]="getControl('team_name')" ></app-common-dropdown>
+            </div>
+        <div class="form_data">
+            <app-common-dropdown [labelStyle]="'light'" [label]="requestTraining.training_name" [data]="trainingNames" [dropdownDownControlName]="getControl('training_name')" ></app-common-dropdown>
+        </div>
+        <div class="description col5">
+                <app-common-text-area  [row]="5"  [label]="requestTraining.textarea1" [labelStyle]="'light'" [inputFormControl]="getControl('learning_are')" ></app-common-text-area>
+        </div>
+        <div class="description col5">
+                <app-common-text-area [row]="5"  [label]="requestTraining.text_area2" [labelStyle]="'light'" [inputFormControl]="getControl('organinization_need')" ></app-common-text-area>
+        </div>
+        <div class="description col_2">
+            <p class="label_text">{{requestTraining.interest|titlecase}}</p>
+
+            <div class="radio_buttons">
+                <mat-radio-group formControlName="interest_to_give_training">
+                    <mat-radio-button value="yes">Yes</mat-radio-button>
+                    <mat-radio-button value="no">No</mat-radio-button>
+                   
+                </mat-radio-group>
+            </div>
+        </div>
+        <div class="description col_2">
+            <p class="label_text">{{requestTraining.time|titlecase}}</p>
+
+            <div class="radio_buttons">
+                <mat-radio-group formControlName="timing" class="vertically">
+                    <mat-radio-button value="immediate">Immediate</mat-radio-button>
+                    <mat-radio-button value="3-6">3 - 6 Months</mat-radio-button>
+                    <mat-radio-button value="6 +">More then 6 Months</mat-radio-button>
+                </mat-radio-group>
+            </div>
+        </div>
+        <div class="buttonGroup">
+            <button class="btn_cancel" (click)="onNoClick()" mat-raised-button type="reset">
+                {{requestTraining.cancel |titlecase}}
+            </button>
+            <button class="btn_primary" type="submit" mat-raised-button  >{{ requestTraining.submit|titlecase}}</button>
+        </div>
+    </form>
+    </div>
+</section>

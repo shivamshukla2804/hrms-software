@@ -1,0 +1,18 @@
+@import 'src/scss/dashbord-card-heading.scss';
+section{
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 2rem;
+    .table{
+        .header{
+            padding: 11px 25px 11px 15px;
+            .heading{
+                border-bottom: 1px solid #f3f7fc;
+                color: var(--header-text-color);
+            }
+
+        }
+        border-radius: 5px;
+    }
+}

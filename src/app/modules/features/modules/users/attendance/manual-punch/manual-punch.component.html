@@ -1,0 +1,24 @@
+<section>
+    <div class="container">
+        <div class="left">
+            <div class="header">
+                <h3 class="heading">Employee Detail</h3>
+            </div>
+            <div class="main">
+                <app-common-input [label]="'Punch Request'" [inputFormControl]="punchRequest"></app-common-input>
+                <app-common-dropdown [label]="'Company'" [dropdownDownControlName]="company"
+                    [data]="['XYZ Technologies']"></app-common-dropdown>
+                <app-common-input [label]="'Employee'" [inputFormControl]="empName"></app-common-input>
+            </div>
+        </div>
+        <div class="right">
+            <div class="header">
+                <h3 class="heading">Manual Punch List</h3>
+                <button class="btn_add_new">+Add New</button>
+            </div>
+            <div class="main">
+                <app-common-table [columns]="columns" [dataSourceForTable]="dataSource"></app-common-table>
+            </div>
+        </div>
+    </div>
+</section>

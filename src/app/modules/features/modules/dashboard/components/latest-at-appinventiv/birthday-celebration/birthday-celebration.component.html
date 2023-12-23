@@ -1,0 +1,67 @@
+<!-- <section>
+    <div class="award-card">
+      <div class="award-header">
+        <p class="award-title">
+          {{birthDay.HEADING}}
+        </p>
+      </div>
+      <span class="dear">{{birthDay.DEARR}}</span>
+      <app-carousel [listToShow]="dataSource" [carouselConfiguration]="carouselConfig"></app-carousel>
+      <ng-container *ngFor="let item of imageData">
+        <ng-template #listofDivs>
+          <figure>
+            <img [src]="imageData[0].IMAGE" alt="emp-image">
+            <div class="emp-info">
+           
+              <h3>{{imageData[0].EMP_NAME}}</h3>
+              <p>{{imageData[0].DESIGNATION}}</p>
+              <p> {{imageData[0].DATE}}</p>
+            </div>
+          </figure>
+        </ng-template>
+      </ng-container>
+      <p class="message">{{birthDay.MESSAGE}}</p>
+      <footer>
+        <p class="cheers">{{birthDay.CHEER}}</p>
+        <p class="company-name">{{birthDay.APPINVENTIV}}</p>
+      </footer>
+  
+    </div>
+  </section>
+   -->
+<section>
+
+  <app-common-card [cardLayoutData]="cardLayoutData" [data]="data"></app-common-card>
+</section>
+
+<!-- <section>
+  <header>
+    <div class="award-header">
+      <p class="award-title">
+        {{cardLayoutData.HEADING}}
+      </p>
+    </div>
+  </header>
+  <main>
+
+    <span class="dear">{{cardLayoutData.DEARR}}</span>
+    <app-carousel [listToShow]="dataSource" [carouselConfig]="carouselConfig"></app-carousel>
+    <ng-container *ngFor="let item of data">
+      <ng-template #listofDivs>
+        <figure>
+          <img [src]="item.IMAGE" alt="emp-image">
+          <div class="emp-info">
+            <h3>{{item.EMP_NAME}}</h3>
+            <p>{{item.DESIGNATION}}</p>
+            <p> {{item.DATE}}</p>
+          </div>
+        </figure>
+      </ng-template>
+    </ng-container>
+    <p class="message">{{cardLayoutData.MESSAGE}}</p>
+  </main>
+  <footer>
+    <p class="cheers">{{cardLayoutData.CHEER}}</p>
+    <p class="company-name">{{cardLayoutData.APPINVENTIV}}</p>
+  </footer>
+</section> -->

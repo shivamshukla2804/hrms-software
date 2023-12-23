@@ -1,0 +1,39 @@
+.address{
+    display: flex;
+    flex-direction: column;
+    // min-width: max-content;
+    .label {
+        font-weight: 500;
+        color: #2f3031;
+        // margin-bottom: 5px;
+      }
+      .light{
+            font-size: 14px;
+            color: #96A5B8;
+            font-weight: 500;
+            line-height: 1.4;
+            margin-bottom: 4px;
+      }
+      .maxlength {
+        color: var(--danger-color);
+        margin-top: -22px;
+        font-weight: 600;
+        display: flex;
+        justify-content: flex-end;
+    
+    }
+}
+::ng-deep {
+    .mat-select-panel {
+        min-width: calc(100% + 15px) !important;
+        margin: 2.5rem auto auto auto !important;
+    }
+
+    .mat-form-field-appearance-outline .mat-form-field-flex {
+        box-shadow: 0px 4px 8px rgb(44 39 56 / 4%) !important;
+    }
+
+    .mat-form-field-appearance-outline .mat-form-field-infix {
+        padding: 12px 0px 15px 0px;
+    }
+}

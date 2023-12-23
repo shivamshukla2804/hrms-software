@@ -1,0 +1,108 @@
+@import 'src/scss/buttons.scss';
+
+section {
+  .heading {
+    background-color: #fff;
+    font-size: 20px;
+    color: #3246d3;
+    font-family: 'Segoe UI';
+    padding: 11px 25px 11px 15px;
+    border-bottom: 1px solid #f3f7fc;
+    font-weight: 700;
+    // h3{
+    //   margin-bottom: 0;
+    // }
+  }
+
+  table {
+    width: 100%;
+    border-radius: 10px;
+
+    th {
+      // text-align: left;
+      width: fit-content;
+    }
+
+    td {
+      .name {
+        display: flex;
+        align-items: center;
+
+        .icon {
+          color: #F40D36;
+          margin-right: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .green {
+          color: green;
+          font-size: 20px;
+        }
+
+        .red {
+          color: #F40D36;
+          font-size: 20px;
+
+        }
+      }
+
+      .action {
+        display: flex;
+        flex-wrap: wrap;
+        a {
+          text-decoration: none;
+        }
+
+        mat-icon {
+          cursor: pointer;
+        }
+
+        .action_button {
+          background: none;
+          border: none;
+          display: flex;
+          align-items: center;
+
+        }
+
+        .link {
+          text-decoration: underline !important;
+          font-weight: 400;
+          color: #1e70cd;
+          background-color: transparent;
+          cursor: pointer;
+        }
+
+        .btn_add_new {
+          background-color: #fff;
+          color: orange;
+        }
+        .delete{
+          color: red;
+        }
+        .edit{
+          color:var(--primary-color);
+        }
+      }
+    }
+
+    mat-icon {
+      margin-right: 4px;
+    }
+  }
+}
+
+:host::ng-deep {
+  .mat-paginator {
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+  }
+
+  .mat-sort-header-container {
+    text-align: center;
+    width: fit-content;
+  }
+}

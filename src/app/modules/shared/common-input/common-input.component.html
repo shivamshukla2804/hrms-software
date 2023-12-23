@@ -1,0 +1,8 @@
+<div class="formfield 1">
+    <label class="label" [ngClass]="labelStyle"  >{{label|titlecase}}</label>
+    <mat-form-field appearance="outline" class="increaseFormfield">
+        <input  [maxlength]="maxLength"  appAvoidFirstSpace [placeholder]="label" matInput  [formControl]="$any(inputControl)"  >
+        <mat-error>{{ inputControl | validate : label }}</mat-error>
+    </mat-form-field>
+</div>
+<!-- appNoSpecialChar="noSpecialChars" -->

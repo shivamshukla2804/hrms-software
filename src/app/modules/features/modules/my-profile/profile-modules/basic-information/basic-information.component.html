@@ -1,0 +1,133 @@
+<section @slideInRight *ngIf="basicInformationForm">
+        <div class="header">
+            <p class="header-text">{{uiMessage.HEADER}}</p>
+        </div>
+            <form [formGroup]="basicInformationForm" (ngSubmit)="save()" >
+                <div class="row 1">
+                    <div class="formfield 1">
+                        <!-- <label class="label">{{labelMessage.FIRST_NAME}}</label>
+                        <mat-form-field appearance="outline" class="increaseFormfield">
+                            <input appAvoidFirstSpace [placeholder]="labelMessage.FIRST_NAME" matInput formControlName="first_name">
+                            <mat-error>{{ getControl("first_name") | validate : "first name" }}</mat-error>
+
+                        </mat-form-field> -->
+                <app-common-input [labelStyle]="'dark'" [label]="labelMessage.FIRST_NAME" [inputFormControl]="getControl('first_name')"></app-common-input>
+
+                    </div>
+                    <div class="formfield 2">
+                        <!-- <label class="label">{{labelMessage.LAST_NAME}}</label>
+                        <mat-form-field appearance="outline" class="increaseFormfield">
+                            <input appAvoidFirstSpace [placeholder]="labelMessage.LAST_NAME" matInput formControlName="last_name">
+                            <mat-error>{{ getControl("last_name") | validate : "last name" }}</mat-error>
+
+                        </mat-form-field> -->
+                <app-common-input [labelStyle]="'dark'" [label]="labelMessage.LAST_NAME" [inputFormControl]="getControl('last_name')"></app-common-input>
+
+                    </div>
+                    <div class="formfield 3">
+                        <!-- <label class="label">{{labelMessage.DATE_OF_BIRTH}}</label>
+                        <mat-form-field appearance="outline" class="increaseFormfield">
+                            <input  matInput [matDatepicker]="picker1" readonly formControlName="dob">
+                            <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+                            <mat-datepicker #picker1></mat-datepicker>
+                            <mat-error>{{ getControl("dob") | validate : "date of birth" }}</mat-error>
+
+                        </mat-form-field> -->
+                <app-common-input [labelStyle]="'dark'" [label]="labelMessage.DATE_OF_BIRTH" [inputFormControl]="getControl('dob')"></app-common-input>
+
+                    </div>
+                </div>
+                <div class="row 2">
+
+                    <div class="formfield 4">
+                        <app-common-dropdown [label]="labelMessage.GENDER" [data]="genderValue" [dropdownDownControlName]="getControl('gender')" ></app-common-dropdown>
+                    </div>
+                    <div class="formfield 5">
+                        <app-common-dropdown [label]="labelMessage.MARITAL_STATUS" [data]="maritalStatusValue" [dropdownDownControlName]="getControl('marital_status')" ></app-common-dropdown>
+                    </div>
+                    <div class="formfield 6">
+                        <!-- <label class="label">{{labelMessage.CONTACT}}</label>
+                        <mat-form-field appearance="outline" class="increaseFormfield">
+                            <input appDigitOnly [placeholder]="labelMessage.CONTACT" matInput formControlName="contact_number">
+                            <mat-error>{{ getControl("contact_number") | validate : labelMessage.CONTACT }}</mat-error>
+
+                        </mat-form-field> -->
+                <app-common-input [labelStyle]="'dark'" [label]="labelMessage.CONTACT" [inputFormControl]="getControl('contact_number')"></app-common-input>
+
+                    </div>
+                </div>
+
+
+                <div class="row row3">
+                    <div class="total-exp">
+                        <p class="label heading-exp">
+                            {{uiMessage.TOTAL_WORK_EXP}}
+                        </p>
+                        <div class="inputs">
+                            <div class="formfield 7">
+                                <!-- <label class="label">{{labelMessage.YEAR}}</label>
+                                <mat-form-field appearance="outline" class="yearFormfield">
+                                    <input appDigitOnly min="0"  [placeholder]="labelMessage.YEAR" matInput formControlName="tot_exp_years">
+                            <mat-error>{{ getControl("tot_exp_years") | validate : labelMessage.YEAR }}</mat-error>
+
+                                </mat-form-field> -->
+                            <app-common-input [labelStyle]="'dark'" [label]="labelMessage.YEAR" [inputFormControl]="getControl('tot_exp_years')"></app-common-input>
+
+                            </div>
+                            <div class="formfield 8">
+                                <!-- <label class="label">{{labelMessage.MONTH}}</label>
+                                <mat-form-field appearance="outline" class="yearFormfield">
+                                    <input appDigitOnly min="0" max="11"  [placeholder]="labelMessage.MONTH" matInput formControlName="tot_exp_month">
+                            <mat-error>{{ getControl("tot_exp_month") | validate : labelMessage.MONTH }}</mat-error>
+
+                                </mat-form-field> -->
+                            <app-common-input [labelStyle]="'dark'" [label]="labelMessage.MONTH" [inputFormControl]="getControl('tot_exp_month')"></app-common-input>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="total-exp">
+                        <p class="label heading-exp">
+                            {{uiMessage.RELEVANT_EXP}}
+                        </p>
+                        <div class="inputs">
+                            <div class="formfield 9">
+                                <!-- <label class="label">{{labelMessage.YEAR}}</label>
+                                <mat-form-field appearance="outline" class="yearFormfield">
+                                    <input appDigitOnly min="0" [placeholder]="labelMessage.YEAR" matInput formControlName="rel_exp_year">
+                            <mat-error>{{ getControl("rel_exp_year") | validate : labelMessage.YEAR }}</mat-error>
+
+                                </mat-form-field> -->
+                            <app-common-input [labelStyle]="'dark'" [label]="labelMessage.YEAR" [inputFormControl]="getControl('rel_exp_year')"></app-common-input>
+
+                            </div>
+                            <div class="formfield 10">
+                                <!-- <label class="label">{{labelMessage.MONTH}}</label>
+                                <mat-form-field appearance="outline" class="yearFormfield">
+                                    <input appDigitOnly min="0" max="11"  [placeholder]="labelMessage.MONTH" matInput formControlName="rel_exp_month">
+                            <mat-error>{{ getControl("rel_exp_month") | validate : labelMessage.MONTH }}</mat-error>
+
+                                </mat-form-field> -->
+                            <app-common-input [labelStyle]="'dark'" [label]="labelMessage.MONTH" [inputFormControl]="getControl('rel_exp_month')"></app-common-input>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row4 address">
+                    <!-- <label class="label">{{labelMessage.ADDRESS}}</label>
+                    <mat-form-field appearance="outline" class="addressFormfield">
+                        <textarea type="text" placeholder="Message" class="inputMessage" matInput cdkTextareaAutosize formControlName="address"
+                            cdkAutosizeMinRows="4" cdkAutosizeMaxRows="7"
+                            [placeholder]="labelMessage.ADDRESS"></textarea>
+                            <mat-error>{{ getControl("address") | validate : labelMessage.ADDRESS }}</mat-error>
+
+                    </mat-form-field> -->
+                <app-common-text-area [row]="3" [column]="10" [label]="labelMessage.ADDRESS" [labelStyle]="'light'" [inputFormControl]="getControl('address')" ></app-common-text-area>
+
+                </div>
+                <div class="row5  classyButton">
+                    <button class="btn_primary" mat-raised-button type="submit" >{{uiMessage.BUTTON}}</button>
+                </div>
+            </form>
+</section>

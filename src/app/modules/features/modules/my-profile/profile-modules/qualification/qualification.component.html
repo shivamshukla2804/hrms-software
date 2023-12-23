@@ -1,0 +1,57 @@
+<section @slideInRight>
+        <div class="header">
+            <p class="header-text">{{uiMessage.QUALIFICATION_HEADER}}</p>
+        </div>
+            <form [formGroup]="qualificationForm" (ngSubmit)="onSubmit()">
+                <div class="inputs">
+                    <div class="formfield 1">
+                      
+                        <app-common-input [labelStyle]="'dark'" [label]="labelMessage.SCHOOL" [inputFormControl]="getControl('school')"></app-common-input>
+
+                    </div>
+
+                    <div class="formfield 2">
+                        <app-common-dropdown [label]="labelMessage.EDUCATION" [data]="educationDropdown" [dropdownDownControlName]="getControl('education')" ></app-common-dropdown>
+                   
+                    </div>
+                    <div class="formfield topField 3">
+                        <label class="label">{{labelMessage.TIME}}</label>
+                       
+                        <app-common-date-picker  [placeHolder]="'From'"  [inputFormControl]="getControl('time_from')" ></app-common-date-picker>
+                    </div>
+                    <div class="formfield topField 4">
+                       
+                        <label> 	&nbsp;  </label>
+                        <app-common-date-picker  [placeHolder]="'To'"  [inputFormControl]="getControl('time_to')" ></app-common-date-picker>
+
+                    </div>
+                    <div class="formfield topField 5">
+                        <app-common-dropdown [label]="labelMessage.LANGUAGE" [data]="languageDropdown" [dropdownDownControlName]="getControl('language')" ></app-common-dropdown>
+
+                    </div>
+                    <div class="formfield topField 6">
+                       
+                        <app-common-input [labelStyle]="'dark'" [label]="labelMessage.PROFESSIONAL_COURSE" [inputFormControl]="getControl('professional_course')"></app-common-input>
+
+                    </div>
+                </div>
+                <div class="address">
+                  
+                <app-common-text-area [row]="4" [column]="10" [label]="labelMessage.DESCRIPTION" [labelStyle]="'light'" [inputFormControl]="getControl('description')" ></app-common-text-area>
+
+                </div>
+                <div class="classyButton">
+                    <button class="btn_primary" mat-raised-button>{{uiMessage.BUTTON}}</button>
+                </div>
+            </form>
+
+    <div class="card2">
+            <div class="header">
+                <p class="header-text">{{uiMessage.LIST_ALL_QUALIFICATION}}</p>
+            </div>
+            <div class="table">
+                <app-common-table  (newItemEvent)="eventFromTable($event)" [columns]="columns" [dataSourceForTable]="dataSource"></app-common-table>
+            </div>
+
+    </div>
+</section>

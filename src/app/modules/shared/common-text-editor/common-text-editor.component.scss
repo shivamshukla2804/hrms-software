@@ -1,0 +1,25 @@
+.formfield{
+    display: flex;
+    flex-direction: column;
+    // width: 200px;
+    overflow: auto;
+    .label {
+        font-weight: 500;
+        color: #2f3031;
+        margin-bottom: 4px;
+      }
+    .dark {
+        font-weight: 500;
+        color: #2f3031;
+      }
+      .light {
+        font-size: 0.85rem;
+        color: #96a5b8;
+        line-height: 1.4;
+      }
+}
+// @media only screen and (max-width: 800px) {
+// .formfield{
+//     width: 700px;
+// }
+// }

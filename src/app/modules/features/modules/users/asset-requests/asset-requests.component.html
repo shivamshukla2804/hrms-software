@@ -1,0 +1,29 @@
+<section>
+    <div class="request">
+        <div class="request_button">
+            <button mat-button (click)="formToggle=!formToggle" class="btn_flat" >+ Add new asset request</button>
+        </div>
+        <form  [formGroup]="assetRequestForm" (ngSubmit)="onSubmit()" *ngIf="formToggle">
+        <div class="row 1">
+            <app-common-dropdown [label]="'Asset Category'" [data]="assetCategory" [dropdownDownControlName]="getControl('asset_category')" ></app-common-dropdown>
+            <app-common-dropdown [label]="'Quantity'" [data]="quantity" [dropdownDownControlName]="getControl('quantity')" ></app-common-dropdown>
+            <app-common-dropdown [label]="'priority'" [data]="priority" [dropdownDownControlName]="getControl('priority')" ></app-common-dropdown>
+            <app-common-date-picker [inputFormControl]="getControl('require_date')" ></app-common-date-picker>
+            <app-common-dropdown [label]="'allocation type'" [data]="allocationType" [dropdownDownControlName]="getControl('allocation_type')" ></app-common-dropdown>
+        </div>
+        <app-common-text-area [label]="'Request Reason *'" [inputFormControl]="getControl('request_reason')"></app-common-text-area>
+        <div class="action">
+            <button mat-raised-button class="btn_primary" type="submit">Submit</button>
+        </div>
+        </form>
+    </div>
+    <div class="main">
+
+        <div class="header">
+            <h3 class="heading">List All Assets inventory</h3>
+        </div>
+        <div class="table">
+            <app-common-table  [columns]="columns" [dataSourceForTable]="dataSource"></app-common-table>
+        </div>
+    </div>
+</section>

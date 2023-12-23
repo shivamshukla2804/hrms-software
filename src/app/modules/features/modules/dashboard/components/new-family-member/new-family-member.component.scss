@@ -1,0 +1,45 @@
+@import "src/scss/dashbord-card-heading.scss";
+
+section {
+    // .heading_wraper{
+    //     position: relative;
+    // }
+    .new_member_card {
+        position: relative;
+        padding: 1.5rem;
+        // min-width: 300px;
+        // overflow: hidden;
+        .item {
+            height: 442px;
+            min-width: 73%;
+            width: fit-content;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            background-image: url("/assets/new-family-card.png");
+
+            figure {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: center;
+
+                img {
+                    width: 120px;
+                    height: 120px;
+                    border-radius: 50%;
+                }
+            }
+            
+            @media only screen and (max-width: 900px) {
+                min-width: 50%;
+
+            }
+        }
+    }
+}

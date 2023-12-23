@@ -1,0 +1,150 @@
+@import 'src/scss/dashbord-card-heading.scss';
+@import 'src/scss/commonscss.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+
+    header {
+        margin-bottom: 25px;
+
+        .emp_basic_info {
+
+            display: flex;
+            -ms-flex-align: center;
+            align-items: center;
+
+            .emp_image {
+                margin-right: 20px;
+
+                img {
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 50%;
+                }
+            }
+
+            .emp_name {
+                span {
+                    font-size: 24px;
+                    font-weight: 200;
+                }
+
+                h2 {
+                    font-size: 24px;
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+        }
+    }
+
+    main {
+        overflow: hidden;
+
+        .main_wraper {
+            display: grid;
+            grid-template-columns: 32% auto 32%;
+
+
+            border-radius: 8px;
+
+            .referral_bonus {
+                margin-right: 10px;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                padding: 1rem;
+
+                .referral_bonus_cards {
+                    gap: 1rem;
+                    display: grid;
+                    grid-template-columns: auto auto;
+
+                    @media only screen and (max-width: 1399px) {
+                        grid-template-columns: auto;
+
+                        html {
+                            font-size: 50%;
+                        }
+                    }
+
+                }
+                .heading_wraper{
+
+                    .heading {
+                        font-family: "Lato";
+                        // font-size: 16px;
+                        color: #199CFF;
+                        font-weight: 600;
+                        // line-height: 1.9;
+                        text-transform: uppercase;
+                        border-bottom: none;
+                    }
+                }
+
+
+            }
+
+            .latest_opeanings {
+                border-right: 1px dashed #ccc;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+                padding: 1rem;
+
+            }
+
+            .new_members {
+                padding: 1rem;
+            }
+
+            @media only screen and (max-width: 1200px) {
+
+                grid-template-columns: 50% auto;
+
+                .new_members {
+                    width: 80vw;
+                }
+            }
+            @media only screen and (max-width: 500px) {
+
+                grid-template-columns:  99%;
+
+                .new_members {
+                    width: 80vw;
+                }
+            }
+            @media only screen and (max-width: 1000px) {
+                .new_members {
+                    width: 91vw;
+                }
+            }
+
+
+
+        }
+
+        .latest_appinventiv {
+            display: grid;
+            grid-template-columns: auto auto auto;
+
+            .work_anniversary,
+            .awards,
+            .birthday_celebration,
+            .appreciation {
+                display: block;
+                overflow: hidden;
+                margin: 0;
+                width: fit-content;
+            }
+        }
+    }
+}

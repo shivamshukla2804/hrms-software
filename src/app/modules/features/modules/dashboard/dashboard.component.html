@@ -1,0 +1,78 @@
+<section>
+    <header>
+        <div class="emp_basic_info">
+            <div class="emp_image">
+                <img src="/assets/default_male.jpg" alt="user_image">
+            </div>
+            <div class="emp_name">
+                <span>Hello!</span>
+                <h2>{{userName|titlecase}}</h2>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="main_wraper">
+            <!-- <div class="left"></div> -->
+            <div class="latest_opeanings dashboard_card">
+                <app-latest-job-opening></app-latest-job-opening>
+            </div>
+            <div class="referral_bonus dashboard_card">
+
+                <div class="heading_wraper">
+                    <h3 class="heading">Our Referral Bonus Program</h3>
+                </div>
+
+                <div class="referral_bonus_cards">
+                    <ng-container *ngFor="let data of referralData">
+                        <app-referral-bonous-program [referalData]="data"></app-referral-bonous-program>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="new_members dashboard_card">
+                <app-new-family-member></app-new-family-member>
+            </div>
+        </div>
+        <div class="latest dashboard_card">
+            <div class="heading ">
+                <h3>Latest at XYZ</h3>
+            </div>
+            <app-carousel [showPoints]="true" [listToShow]="dataSource"
+                [carouselConfig]="carouselConfig"></app-carousel>
+        </div>
+
+        <div class="latest_appinventiv">
+
+            <div class="appreciation">
+                <ng-template #listofDivs>
+                    <app-appreciation></app-appreciation>
+                </ng-template>
+            </div>
+
+            <div class="work_anniversary">
+                <ng-template #listofDivs>
+                    <app-work-anniversary></app-work-anniversary>
+                </ng-template>
+            </div>
+            <div class="birthday_celebration">
+                <ng-template #listofDivs>
+                    <app-birthday-celebration></app-birthday-celebration>
+                </ng-template>
+            </div>
+
+            <div class="awards">
+                <ng-template #listofDivs>
+                    <app-awards></app-awards>
+                </ng-template>
+            </div>
+
+
+        </div>
+        <div class="gallery">
+            <app-gallery></app-gallery>
+        </div>
+
+
+
+    </main>
+
+</section>

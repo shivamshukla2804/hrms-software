@@ -1,0 +1,54 @@
+<section>
+    <div class="navigations">
+        <div class="sub_navigation">
+            <mat-button-toggle-group #subNav="matButtonToggleGroup" *ngIf="mainNav?.value=='grid_view'">
+                <mat-button-toggle value="all_projects_grid" aria-label="Text align left" checked>
+                    <h3 class="head_text">All</h3>
+                </mat-button-toggle>
+                <mat-button-toggle value="on_going" aria-label="Text align center">
+                    <h3 class="head_text">Ongoing</h3>
+
+                </mat-button-toggle>
+                <mat-button-toggle value="hold_projects" aria-label="Text align right">
+                    <h3 class="head_text">Hold</h3>
+                </mat-button-toggle>
+                <mat-button-toggle value="finished" aria-label="Text align right">
+                    <h3 class="head_text">Finished</h3>
+                </mat-button-toggle>
+            </mat-button-toggle-group>
+        </div>
+        <div class="main_navigation">
+
+            <mat-button-toggle-group #mainNav="matButtonToggleGroup">
+                <mat-button-toggle value="grid_view" aria-label="Text align left">
+                    <mat-icon>grid_view</mat-icon>
+                </mat-button-toggle>
+                <mat-button-toggle value="all_projects_list" aria-label="Text align center" checked>
+                    <mat-icon>format_list_bulleted</mat-icon>
+                </mat-button-toggle>
+                <mat-button-toggle value="link" aria-label="Text align right">
+                    <mat-icon>link</mat-icon>
+                </mat-button-toggle>
+            </mat-button-toggle-group>
+        </div>
+    </div>
+    <div class="main">
+        <ng-container [ngSwitch]=" mainNav?.value=='all_projects_list'? 'all_projects_list':subNav?.value ">
+            <ng-container *ngSwitchCase=" 'all_projects_list' ">
+                <app-all-projects-list></app-all-projects-list>
+            </ng-container>
+            <ng-container *ngSwitchCase="'all_projects_grid'">
+                <app-all-projects-grid></app-all-projects-grid>
+            </ng-container>
+            <ng-container *ngSwitchCase=" 'hold_projects' ">
+                <app-hold-projects></app-hold-projects>
+            </ng-container>
+            <ng-container *ngSwitchCase=" 'on_going' ">
+                <app-on-going-projects></app-on-going-projects>
+            </ng-container>
+            <ng-container *ngSwitchCase=" 'finished' ">
+                <p>Page Under development</p>
+            </ng-container>
+        </ng-container>
+    </div>
+</section>

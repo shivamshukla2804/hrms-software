@@ -1,0 +1,44 @@
+<section>
+
+    <div class="heading_wraper">
+        <h3 class="heading">Latest Job Openings</h3>
+        <button mat-raised-button class="view_all btn_primary" (click)="toViewAll()"  >View All</button>
+    </div>
+
+    <app-carousel [listToShow]="dataSource"  [carouselConfig]="carouselConfig" ></app-carousel>
+
+    <ng-container *ngFor="let job of jobOpenings">
+
+        <ng-template #listofDivs>
+            <app-job-opeining-card [job]="job" ></app-job-opeining-card>
+            
+            <!-- <div class="job_details">
+                <div class="job_logo">
+                    <figure>
+                        <img [src]="job.jobLogo" alt="job_logo">
+                    </figure>
+                </div>
+                <div class="job_title">
+                    <h3 class="heading">{{job.jobTite}}</h3>
+                    <p class="description">{{job.jobDescription}}</p>
+                </div>
+                <div class="job_exp_opening">
+                    <div class="no_opening">
+                        <p>No. of Openings</p>
+                        <h4>{{job.no_of_openings}}</h4>
+                    </div>
+                    <div class="no_experience">
+                        <p>Experience</p>
+                        <h4>{{job.exp_from}} to {{job.exp_to}} years</h4>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button mat-button class="view_details btn_cancel">View Details</button>
+                    <button mat-raised-button class="refer btn_primary" (click)="openJobReferalForm(job)">Refer a Condidate</button>
+
+                </div>
+            </div> -->
+
+        </ng-template>
+    </ng-container>
+</section>

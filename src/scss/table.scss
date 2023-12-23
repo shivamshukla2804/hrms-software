@@ -1,0 +1,51 @@
+section{
+
+  ::ng-deep {
+    .table {
+      border-radius: 10px;
+      border: 1px solid rgba(150, 165, 184, 0.3);
+      overflow: auto;
+      table {
+        padding: 0 1rem;
+        th {
+          font-size: 1rem !important;
+          color: #96A5B8 !important;
+          font-weight: 500;
+          line-height: 1.5;
+      padding:1.5rem 10px 1.5rem 3rem !important;
+
+          border-bottom: 1px solid #EDF2F6;
+        }
+        
+        
+        td {
+          padding:1.5rem 10px 1.5rem 3rem !important;
+
+          color: #606167 !important;
+          line-height: 1.5;
+          padding: 20px 10px;
+          border-bottom: 1px solid #EDF2F6;
+          text-align:initial;
+          .action {
+            .action_button {
+              color: #199CFF;
+              font-family: "Lato";
+              font-size: 16px;
+              font-weight: 400;
+              line-height: 1.4;
+              background-color: #F8F8F8;
+              padding: 0.3rem 1.5rem;
+              mat-icon {
+                cursor: pointer;
+                color: #199CFF;
+                
+              }
+              
+            }
+          }
+        }
+      }
+
+    }
+  }
+}

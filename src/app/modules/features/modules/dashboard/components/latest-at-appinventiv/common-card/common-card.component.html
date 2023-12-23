@@ -1,0 +1,32 @@
+<section>
+  <header>
+    <div class="heading latest_appinv_cards_heading">
+      <h3>{{cardLayoutData.HEADING}} </h3>
+    </div>
+    <span class="dear">{{cardLayoutData.DEARR}}</span>
+  </header>
+  
+  <main>
+    <app-carousel [listToShow]="dataSource" [carouselConfig]="carouselConfig"></app-carousel>
+  <ng-container *ngFor="let item of data">
+    <ng-template #listofDivs>
+        <figure>
+          <img [src]="item.IMAGE" alt="emp-image">
+          <div class="emp-info">
+            <h3>{{item.EMP_NAME}}</h3>
+            <p>{{item.DESIGNATION}}</p>
+            <p> {{item.DATE}}</p>
+          </div>
+        </figure>
+      </ng-template>
+    </ng-container>
+    <p class="message latest_appinv_cards_description">{{cardLayoutData.MESSAGE}}</p>
+  </main>
+  <!-- <footer> -->
+    <div class="footer">
+
+      <p class="cheers">{{cardLayoutData.CHEER}}</p>
+      <p class="comp_name">{{cardLayoutData.APPINVENTIV}}</p>
+    </div>
+  <!-- </footer> -->
+</section>

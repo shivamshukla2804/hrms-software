@@ -1,0 +1,41 @@
+section {
+  text-align: center;
+  background-color: #fff;
+  position: relative;   
+  width: 100% !important;
+  figure{
+    border-radius: 2px;
+    img {
+      height: 50vh;
+      -o-object-fit: cover;
+      object-fit: cover;
+      margin: 5px;
+      width: 100%;
+    }
+    ::after{
+      content: '';
+    width: 100px;
+    height: 100px;
+    background-image: url('/assets/loading.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    }
+  }
+  
+  .close {
+    position: absolute;
+    top: -24px;
+    right: -24px;
+    background: rgb(97, 84, 84);
+    color: #fff;
+    cursor: pointer;
+    border: none;
+  }
+}

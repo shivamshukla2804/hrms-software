@@ -1,0 +1,26 @@
+<section>
+        <header>
+            <figure>
+                <img src="/assets/default_male.jpg" alt="Image">
+            </figure>
+            <div class="basic_details">
+                <span class="name">{{data?.name||'User Name'}}</span>
+                <span>{{data.technology || 'User Technology'}}</span>
+            </div>
+            <mat-icon class="close" (click)="onNoClick()">close</mat-icon>
+        </header>
+
+        <main>
+            <div class="upper">
+                <h3> {{data.HEADER}} </h3>
+                <span class="dear">{{data.DEAR}} {{data.TEXT}}</span>
+            </div>
+            <div class="message">
+                <p>{{data.MESSAGE}}</p>
+
+            </div>
+        </main>
+        <footer>
+            <p class="cheers">{{data.GREET}}</p>
+        </footer>
+</section>

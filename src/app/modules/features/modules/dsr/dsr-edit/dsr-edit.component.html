@@ -1,0 +1,28 @@
+<section>
+    <div class="header">
+        <h3 class="heading">DSR Edit</h3>
+    </div>
+    <form [formGroup]="dsrForm" (ngSubmit)="onUpdate()">
+
+        <div class="left">
+            <div class="row">
+                <app-common-dropdown [label]="'Project'" [data]="leaveTypes"
+                    [dropdownDownControlName]="getControl('project')"></app-common-dropdown>
+            </div>
+            <div class="second">
+                <app-common-input [label]="'Date'"
+                    [inputFormControl]="getControl('date')"></app-common-input>
+                <app-common-input [label]="'Estimated Hour'"
+                    [inputFormControl]="getControl('logged_hr')"></app-common-input>
+            </div>
+        </div>
+        <div class="right">
+            <app-common-text-editor [label]="'Description'"
+                [inputFormControl]="getControl('description')"></app-common-text-editor>
+        </div>
+        <div class="actions">
+            <button class="btn_primary save" mat-raised-button type="submit">Update</button>
+
+        </div>
+    </form>
+</section>

@@ -1,0 +1,27 @@
+@import 'src/scss/table.scss';
+
+section {
+    .row {
+        padding: 0.875rem 0.5rem;
+
+        .header {
+            border-bottom: 1px solid rgba(150, 165, 184, 0.5);
+            padding: 0 0 15px 0;
+
+            .heading {
+                font-size: 18px;
+                color: #231E1E;
+                // font-weight: 500;
+                line-height: 1.32;
+                margin-bottom: 0;
+            }
+
+        }
+
+    }
+    ::ng-deep {
+        .table {
+            border: none;
+        }
+    }
+}

@@ -1,0 +1,33 @@
+<section>
+  <mat-list-item (click)="showSubmenu = !showSubmenu" [routerLink]="item.route|absolutePath "
+    [routerLinkActive]="item.route?'is_active':''" [disabled]="!item.isActive">
+    <div class="item_text ">
+      <mat-icon class="item_icon">{{ item.icon }}</mat-icon>
+      <p class="sidenav_text" *ngIf="isShowing">
+        {{ item.title }}
+      </p>
+    </div>
+    <mat-icon class="menu-button" [ngClass]="{ rotated: showSubmenu }" *ngIf="item.options">expand_more</mat-icon>
+  </mat-list-item>
+  <ng-container *ngIf="item.options && item.options.length">
+    <ng-container *ngFor="let subMenuItem of item.options">
+        <mat-list-item [ngClass]="{ expanded: showSubmenu }" *ngIf="showSubmenu && isShowing"
+          [routerLink]="subMenuItem.route|absolutePath" [routerLinkActive]="subMenuItem.route?'submenu_active':''">
+          <div class="sub item_text" *ngIf="!subMenuItem.link;else link">
+            <mat-icon class="item_icon">{{ subMenuItem?.subicon }}</mat-icon>
+            <p class="sidenav_text" *ngIf="isShowing">
+              {{subMenuItem.subTitle }}
+            </p>
+          </div>
+          <ng-template #link>
+            <a class="sub item_text" [href]="subMenuItem.link">
+              <mat-icon class="item_icon">{{ subMenuItem?.subicon }}</mat-icon>
+              <p class="sidenav_text" *ngIf="isShowing">
+                {{subMenuItem.subTitle }}
+              </p>
+            </a>
+          </ng-template>
+        </mat-list-item>
+      </ng-container>
+  </ng-container>
+</section>

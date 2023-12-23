@@ -1,0 +1,27 @@
+<section>
+    <div class="header">
+        <h3 class="heading">Cancel Enrollment </h3>
+        <div class="cancel_icon" (click)="onNoClick()">
+            <mat-icon class="icon">close</mat-icon>
+        </div>
+    </div>
+    <div class="main">
+        <p class="text_danger">After cancelling this enrollment you can re-enroll one time only.</p>
+        <div class="description col5">
+            <label class="label_text">{{ 'Please provide brief reason *' }}</label>
+            <mat-form-field appearance="outline">
+                <textarea  [rows]="5" [maxLength]="500" #textarea matInput [formControl]="brief" placeholder="Enter Detail Reason" ></textarea>
+                <mat-error>{{ brief| validate : LABELS.OVERALL }}</mat-error>
+
+            </mat-form-field>
+            <p class="maxlength">
+                {{textarea.value.length}}/{{500}}</p>
+        </div>
+        <div class="buttonGroup">
+            <button class="btn_cancel" (click)="onNoClick()" mat-raised-button type="reset">
+                {{LABELS.CANCEL_BUTTON }}
+            </button>
+            <button class="btn_primary" type="submit" mat-raised-button (click)="onSubmit()" >{{ LABELS.SUBMIT_BUTTON }}</button>
+        </div>
+    </div>
+</section>

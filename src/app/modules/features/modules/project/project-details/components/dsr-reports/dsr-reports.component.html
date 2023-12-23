@@ -1,0 +1,68 @@
+<section>
+    <div class="row">
+        <div class="header">
+            <h3 class="heading">Filters</h3>
+        </div>
+          <form [formGroup]="filterForm" (ngSubmit)="search()">
+
+            <app-common-input [labelStyle]="'dark'" [label]="'Date From'" [inputFormControl]="getControl('date_from')"></app-common-input>
+            <app-common-input [labelStyle]="'dark'" [label]="'Date to'" [inputFormControl]="getControl('date_to')"></app-common-input>
+            <app-common-dropdown [label]="'Department'" [data]="departments" [dropdownDownControlName]="getControl('submission_status')" ></app-common-dropdown>
+            <app-common-dropdown [label]="'Project Resource'" [data]="departments" [dropdownDownControlName]="getControl('department')" ></app-common-dropdown>
+            <app-common-dropdown [label]="'Submission Status'" [data]="departments" [dropdownDownControlName]="getControl('project_resource')" ></app-common-dropdown>
+            <app-common-dropdown [label]="'PM Approval Status'" [data]="departments" [dropdownDownControlName]="getControl('pm_pproval_status')" ></app-common-dropdown>
+            <app-common-dropdown [label]="'AM Approval Status'" [data]="departments" [dropdownDownControlName]="getControl('am_pproval_status')" ></app-common-dropdown>
+            <app-common-dropdown [label]="'RM Approval Status'" [data]="departments" [dropdownDownControlName]="getControl('rm_pproval_status')" ></app-common-dropdown>
+            <app-common-dropdown [label]="'Final Approval Status'" [data]="departments" [dropdownDownControlName]="getControl('final_pproval_status')" ></app-common-dropdown>
+            <app-common-dropdown [label]="'Hours'" [data]="departments" [dropdownDownControlName]="getControl('hours')" ></app-common-dropdown>
+            
+            <div class="actions">
+              <button class="btn_primary save" mat-raised-button type="submit">Search</button>
+              <button class="btn_cancel cancel" mat-raised-button type="reset"> Reset</button>
+              
+            </div>
+          </form>
+        <div class="dsr_analytic">
+            <div class="header">
+                <h3 class="heading">DSR Analytics</h3>
+            </div>
+            <div class="dsr_list">
+                <ul>
+                    <li>
+                      <h4>Total DSR Submitted</h4>
+                      <span class="ttl_dsr_submited">200</span>
+                    </li>
+                    <li>
+                      <h4>Total DSR DUE</h4>
+                      <span class="ttl_dsr_due">200</span>
+                    </li>
+                    <li>
+                      <h4>Total DSR Pending Apporval</h4>
+                      <span class="ttl_dsr_pend_apprvl">200</span>
+                    </li>
+                    <li>
+                      <h4>Total DSR Approved</h4>
+                      <span class="ttl_dsr_apprvd">200</span>
+                    </li>
+                    <li>
+                      <h4>Total DSR Rejected</h4>
+                      <span class="ttl_dsr_rjcted">200</span>
+                    </li>
+                    <li>
+                      <h4>Pending AM Approvals </h4>
+                      <span class="pndn_am_apprvl">200</span>
+                    </li>
+                    <li>
+                      <h4>Pending PM Approvals </h4>
+                      <span class="pndn_pm_apprvl">200</span>
+                    </li>
+                    <li>
+                      <h4>Pending RM Approvals </h4>
+                      <span class="pndn_rm_apprvl">200</span>
+                    </li>
+                  </ul>
+            </div>
+        </div>
+    </div>
+
+</section>

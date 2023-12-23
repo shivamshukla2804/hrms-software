@@ -1,0 +1,112 @@
+.btn_primary {
+
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), #199CFF;
+    background-blend-mode: soft-light, normal;
+    border: 1px solid rgba(150, 165, 184, 0.2);
+    box-sizing: border-box;
+    box-shadow: 0px 1px 4px rgb(0 0 0 / 12%), inset 0px 2px 0px rgb(255 255 255 / 24%);
+    border-radius: 4px;
+    color: #FFFFFF;
+    transition-delay: 1ms;
+    padding: 0px 1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+
+    &:hover {
+        background: #31b8ff;
+        color: #fff
+    }
+}
+
+.btn_cancel {
+    border: 1.5px solid rgba(150, 165, 184, 0.5);
+    background-color: #ffffff;
+    border-radius: 4px;
+    padding: 0px 1rem;
+    border: 1.5px solid rgba(150, 165, 184, 0.5);
+    font-family: "Lato";
+    font-size: 0.9rem;
+    color: #96A5B8;
+    font-weight: 500;
+    transition-delay: 2ms;
+    cursor: pointer;
+
+    &:hover {
+        color: #199CFF;
+
+    }
+}
+
+.btn_danger {
+    background: #d9534f;
+    -webkit-box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 7%), 0px 4px 5px 0px rgb(0 0 0 / 5%), 0px 1px 10px 0px rgb(0 0 0 / 3%);
+    box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 7%), 0px 4px 5px 0px rgb(0 0 0 / 5%), 0px 1px 10px 0px rgb(0 0 0 / 3%);
+    color: #fff;
+    border: 0px solid transparent;
+    border-radius: 4px;
+    transition-delay: 1ms;
+    padding: 0px 1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.btn_flat {
+    background: #3246d3;
+    color: #fff;
+    border-radius: 4px;
+    padding: 2px 18px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 3px 6px 0 rgb(0 0 0 / 16%);
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.btn_add_new {
+    background: transparent;
+    -webkit-box-shadow: 0 0 0 1px #26b4ff inset;
+    box-shadow: 0 0 0 1px #26b4ff inset;
+    color: #26B4FF;
+    padding: 0.0625rem 0.5rem;
+    font-size: .6875rem;
+    line-height: 1.55;
+    border-radius: 0.125rem;
+    border: #26b4ff;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #26B4FF;
+        color: #fff;
+
+    }
+}
+
+.project_add_btn {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 21px;
+    padding: 0;
+    vertical-align: top;
+    background: #3246d3;
+    cursor: pointer;
+    border: none;
+}
+
+.project_btn {
+    min-width: 100px;
+    background: #3246d3;
+    color: #fff;
+    font-family: 'Segoe UI';
+    border-radius: 4px;
+    padding: 5px 0px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    font-size: 18px;
+    font-weight: 600;
+}

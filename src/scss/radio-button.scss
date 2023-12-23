@@ -1,0 +1,46 @@
+::ng-deep {
+    .mat-form-field-appearance-outline .mat-form-field-flex {
+        box-shadow: 0px 4px 8px rgb(44 39 56 / 4%);
+    }
+
+    .cdk-overlay-dark-backdrop {
+        background: rgba(0, 0, 0, 0.80);
+    }
+
+    .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+        border-color: rgb(10, 93, 228);
+      }
+      
+      .mat-radio-button.mat-accent .mat-radio-inner-circle {
+        color: rgb(12, 95, 230);
+        background-color: rgb(7, 94, 235);
+      }
+      
+      .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
+        background-color:transparent !important
+      }
+
+    .mat-radio-button {
+        margin-right: 1rem;
+    }
+
+    .mat-radio-label {
+
+        .mat-radio-container {
+            width: 15px;
+            height: 15px;
+
+            .mat-radio-outer-circle {
+                height: 15px;
+                width: 15px;
+                border-width: 1px;
+
+            }
+
+            .mat-radio-inner-circle {
+                width: 15px;
+                height: 15px;
+            }
+        }
+    }
+}

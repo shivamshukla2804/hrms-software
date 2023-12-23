@@ -1,0 +1,39 @@
+<section>
+    <div class="add_leave">
+        <div class="header">
+            <h3 class="heading">Create New Ticket</h3>
+            <button class="btn_add_new" (click)="toggle=!toggle">+Add New</button>
+        </div>
+            <form *ngIf="toggle" [formGroup]="ticketForm" (ngSubmit)="onSubmit()">
+
+            <div class="left">
+                <div class="row">
+                    <app-common-input [label]="'Subject'" [inputFormControl]="getControl('subject')"></app-common-input>
+                </div>
+                <div class="row">
+                    <app-common-dropdown [label]="'Department'" [data]="leaveTypes" [dropdownDownControlName]="getControl('department')" ></app-common-dropdown>
+                </div>
+                <div class="row">
+                    <app-common-dropdown [label]="'Ticket Category'" [data]="leaveTypes" [dropdownDownControlName]="getControl('ticket_category')" ></app-common-dropdown>
+                </div>     <div class="row">
+                    <app-common-dropdown [label]="'Priority'" [data]="leaveTypes" [dropdownDownControlName]="getControl('priority')" ></app-common-dropdown>
+                </div>
+               
+            </div>
+            <div class="right">
+                <app-common-text-editor [label]="'Ticket Description'" [inputFormControl]="getControl('ticket_description')" ></app-common-text-editor>
+            </div>
+            <div class="actions">
+                <button class="btn_primary save" mat-raised-button type="submit">Save</button>
+                <button class="btn_cancel cancel" mat-raised-button type="reset" (click)="toggle=false" > Cancel</button>
+
+            </div>
+        </form>
+
+        </div>
+    <div class="table">
+        <app-common-table [columns]="columns" [dataSourceForTable]="dataSource"></app-common-table>
+
+    </div>
+
+</section>

@@ -1,0 +1,65 @@
+.filter {
+  width: 98% !important;
+  padding: 10px 0px !important;
+  overflow: hidden;
+}
+
+::ng-deep {
+  .mat-option[aria-disabled="true"] {
+    font-weight: 500;
+    color: black;
+    text-transform: capitalize;
+    user-select: none;
+    cursor: default;
+    overflow: hidden;
+  }
+
+  .mat-select-panel {
+    min-width: calc(100% + 5px) !important;
+    margin: 2.5rem auto auto auto !important;
+  }
+
+  .mat-select-arrow {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent !important;
+    border-right: 10px solid transparent !important;
+    border-top: 11px solid !important;
+    margin: 0 4px;
+  }
+
+  .mat-primary .mat-option:hover {
+    background: var(--button-background-color);
+    color: #fff;
+
+    &:focus {
+      background: var(--button-background-color);
+
+    }
+  }
+
+  .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+
+    color: #fff;
+  }
+}
+
+
+.formfield {
+  display: flex;
+  flex-direction: column;
+
+  .label {
+    font-weight: 500;
+    color: #2f3031;
+  }
+.dark {
+    font-weight: 500;
+    color: #2f3031;
+  }
+  .light {
+    font-size: 0.85rem;
+    color: #96a5b8;
+    line-height: 1.4;
+  }
+}

@@ -1,0 +1,22 @@
+<section>
+  <app-carousel [listToShow]="dataSource" [carouselConfig]="carouselConfig"></app-carousel>
+  <ng-container *ngFor="let item of data">
+    <ng-template #listofDivs>
+      <div class="container">
+        <header>
+          <div class="heading latest_appinv_cards_heading">
+            <h3> {{item.HEADER}} </h3>
+          </div>
+          <span class="dear">{{item.DEAR}} {{item.TEXT}}</span>
+        </header>
+      <main>
+        <p class="message latest_appinv_cards_description">{{item.MESSAGE}}</p>
+        <p class="cheers">{{item.GREET}}</p>
+      </main>
+      <footer>
+        <button class="btn_primary" mat-raised-button (click)="openDialog(item)">{{item.BUTTON}}</button>
+      </footer>
+    </div>
+    </ng-template>
+  </ng-container>
+</section>

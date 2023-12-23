@@ -1,0 +1,15 @@
+@import 'src/app/modules/features/modules/users/asset-requests/asset-requests.component.scss';
+section{
+    .request{
+        form{
+            .file_input{
+                width: 50%;
+            }
+        }
+    }
+}
+::ng-deep{
+    .mat-form-field{
+        width: 100%;
+    }
+}

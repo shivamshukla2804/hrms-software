@@ -1,0 +1,160 @@
+@import 'src/scss/buttons.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section {
+
+    h3,
+    h4 {
+        margin: 0;
+
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        // align-items: center;
+        min-height: 8rem;
+        flex-wrap: wrap;
+
+        .heading {
+            font-size: 34px;
+            font-weight: bold;
+            font-family: 'Segoe UI';
+            color: #3246d3;
+            line-height: 1.35;
+            height: unset;
+        }
+
+        .projectTagsWrapper {
+            min-width: 20rem;
+            margin-bottom: 20px;
+            padding: 20px 13px;
+            border-radius: 11px;
+            background: #fff;
+
+            .tagHeader {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 20px;
+                font-weight: 600;
+                color: #2f3031;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+                font-family: 'Segoe UI';
+                padding-bottom: 10px;
+                position: relative;
+
+                .btn {
+                    top: -2px;
+                    right: 0;
+                    position: absolute;
+
+                }
+            }
+
+            .badgeWrapper {
+                .tech_badge.node {
+                    background: rgba(178, 54, 241, 0.2);
+                }
+
+                i,
+                ol,
+                ul {
+                    list-style-type: none;
+                }
+            }
+
+            .badgeWrapper ul li {
+                display: inline-block;
+                margin: 5px;
+                padding: 5px 10px;
+                border-radius: 5px;
+            }
+
+        }
+    }
+
+    .tabs_wrapper {
+        // background-color: #fff;
+        // padding: 0.5rem;
+
+        // position: relative;
+
+        ::ng-deep {
+
+            .mat-tab-header {
+
+                align-self: start;
+                border: none;
+                align-items: center;
+                color: #000;
+                width: 100%;
+                background-color: #fff;
+                // position: absolute;
+                border-radius: 5px;
+                box-shadow: 0 3px 5px 0 rgb(119 119 119 / 16%);
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .mat-tab-label .mat-tab-label-content {
+                padding: 0 0 3px 0 !important;
+                font-size: 1.1rem;
+                font-weight: 500;
+                color: black;
+                text-transform: capitalize;
+                line-height: 1.15;
+
+            }
+
+            .mat-tab-labels {
+                width: 100px;
+
+            }
+
+            .mat-tab-label-container {
+                padding: 7px 15px;
+            }
+
+
+            .mat-tab-list .mat-tab-labels {
+                // background-color: rgba(227, 236, 243, 0.46);
+                // padding: 6px;
+                // border-radius: 7px;
+                color: #000;
+
+            }
+
+            .mat-tab-list .mat-tab-labels .mat-tab-label-active {
+                color: #000;
+                // background-color: var(--button-background-color);
+                // padding: 0.675rem 2.0625rem;
+                // border-radius: 5px;
+            }
+
+            .mat-tab-group.mat-primary .mat-ink-bar {
+                // background-color: transparent;
+                // border: none;
+            }
+
+            .mat-tab-body-content {
+                // margin-top: 2rem;
+
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1240px) {
+    // section {
+
+    //     .header {
+    //         grid-template-columns: auto auto auto;
+    //     }
+    // }
+}

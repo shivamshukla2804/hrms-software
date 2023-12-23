@@ -1,0 +1,8 @@
+<div class="formfield">
+    <label class="label" [ngClass]="labelStyle" >{{ label|titlecase }} <span class="warn">{{labelSuggestation|titlecase}}</span>  </label>
+    <mat-form-field appearance="outline" class="field">
+      <input matInput readonly [formControl]="inputFormControl" />
+      <input class="inner"  type="file" [accept]="fileType" [formControl]="inputFormControl" />
+      <mat-error  >{{ inputFormControl| validate : label }}</mat-error>
+    </mat-form-field>
+  </div>

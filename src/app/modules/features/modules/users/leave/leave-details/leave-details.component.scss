@@ -1,0 +1,91 @@
+@import 'src/scss/dashbord-card-heading.scss';
+// @import 'src/scss/table.scss';
+
+section {
+    .leave_status {
+        height: 10rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .names {
+            display: flex;
+            justify-content: space-between;
+            width: 50%;
+            .name{
+                color: #595959;
+                font-size: 1.3rem;
+                margin-bottom: 5px;
+                font-weight: 500;
+            }
+        }
+        .progress_bar{
+            height: 10px;
+            background-color: red;
+            width: 38%;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+    }
+
+    .header {
+
+        .heading {
+            color: var(--header-text-color);
+            font-weight: 500;
+            line-height: 1.2;
+            padding: 11px 25px 11px 15px;
+
+        }
+
+        border-bottom: 1px solid #f0f0f1;
+    }
+
+    .main {
+        display: grid;
+        grid-template-columns: 40% 30%;
+        gap: 2rem;
+
+        .table_container {
+            background-color: #fff;
+            border-radius: 5px;
+            .table {
+                width: 100%;
+                padding: 1.5rem;
+                border: none;
+                tbody tr:nth-of-type(odd) {
+                    background-color: rgba(24, 28, 33, 0.025);
+                }
+
+                th,
+                td {
+                    padding: 0.625rem;
+                    vertical-align: top;
+                    border-top: 1px solid #f1f1f2;
+                    font-weight: 400;
+                    text-align: start;
+                }
+            }
+
+            .reason {
+                padding: 1.5rem;
+
+            }
+        }
+
+        .approve_container {
+
+            .approve_status {
+                background-color: #fff;
+                border-radius: 5px;
+
+                .card_body {
+
+                    padding: 1.5rem;
+                }
+            }
+
+        }
+
+    }
+}

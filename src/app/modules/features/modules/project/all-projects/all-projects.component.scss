@@ -1,0 +1,72 @@
+section {
+
+    ::ng-deep {
+
+        .mat-button-toggle-group-appearance-standard {
+            gap: 2rem;
+            border: none;
+        }
+
+        .navigations {
+            display: flex;
+            justify-content: flex-end;
+            gap: 2rem;
+            flex-wrap: wrap;
+            .head_text {
+                margin: 0;
+                font-size: 1rem;
+                font-weight: 500;
+
+            }
+
+            .main_navigation {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                .mat-button-toggle-checked {
+                    background-color: #323a46 !important;
+                    color: #fff !important;
+                    padding: 2px;
+                    border-radius: 4px;
+                    transform: scaleY(1);
+                    display: flex;
+
+
+                }
+            }
+
+            .sub_navigation {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+
+                .mat-button-toggle-checked {
+                    background-color: #6658de !important;
+                    color: #fff !important;
+                    // padding: 2px;
+                    border-radius: 4px;
+                    transform: scaleY(1);
+                    display: flex;
+                    padding: 5px 7px;
+                    font-size: 1.2rem;
+                }
+            }
+
+        }
+
+        .mat-button-toggle-group-appearance-standard .mat-button-toggle+.mat-button-toggle {
+            border-left: none;
+        }   
+        .mat-button-toggle-group{
+            flex-wrap: wrap;
+        }
+
+        .mat-button-toggle-appearance-standard {
+            color: rgba(0, 0, 0, 0.87);
+            background: none;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+    }
+}

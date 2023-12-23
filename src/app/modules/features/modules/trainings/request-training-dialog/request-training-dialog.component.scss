@@ -1,0 +1,82 @@
+@import 'src/scss/buttons.scss';
+@import 'src/scss/radio-button.scss';
+
+section {
+    // max-width: 30rem;
+    // height: unset;
+    .header {
+        background: gainsboro;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-top: -24px;
+        margin-left: -24px;
+        margin-right: -24px;
+        margin-bottom: 2rem;
+
+        .heading {
+            padding: 16px 16px 5px 30px;
+            font-size: 1.3rem;
+            color: var(--directory-header-color);
+            font-weight: 500;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .cancel_icon {
+            margin-right: 10px;
+            background-color: #fff;
+            border-radius: 50%;
+            padding: 5px;
+            cursor: pointer;
+
+            .icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 20px;
+            }
+        }
+    }
+    .main{
+    padding: 0.5rem;
+        .description {
+
+            .radio_buttons {
+                .vertically{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 6px;
+                }
+            }
+        }
+
+        .buttonGroup {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 2rem;
+            .cancelButton {
+                background-color: transparent;
+                border-radius: 10px;
+                color: var(directory-font-color);
+                border: 1.5px solid var(--directory-font-color);
+            }
+
+        }
+    }
+}
+::ng-deep{
+    .mat-dialog-container{
+        height: unset;
+    }
+    // .cdk-overlay-pane{
+    //     overflow: auto;
+    // }
+}
+@media (min-width:1011px) {
+    section{
+      width: 700px;
+  
+    }
+  }

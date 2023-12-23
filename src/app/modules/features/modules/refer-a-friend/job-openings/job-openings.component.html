@@ -1,0 +1,10 @@
+<Section>
+    <div class="header">
+        <h3 class="heading">Current Job Openings</h3>
+    </div>
+    <div class="main">
+        <ng-container *ngFor="let job of jobOpenings">
+            <app-job-opeining-card [job]="job" ></app-job-opeining-card>
+        </ng-container>
+    </div>
+</Section>

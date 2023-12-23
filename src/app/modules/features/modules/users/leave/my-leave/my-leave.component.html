@@ -1,0 +1,82 @@
+<section>
+    <div class="leave">
+        <ng-container *ngTemplateOutlet="leave;context:{     data:leaves[0]  }"> </ng-container>
+        <ng-container *ngTemplateOutlet="leave;context:{     data:leaves[1]  }"> </ng-container>
+        <ng-container *ngTemplateOutlet="leave;context:{     data:leaves[2]  }"> </ng-container>
+        <ng-container *ngTemplateOutlet="leave;context:{     data:leaves[3]  }"> </ng-container>
+    </div>
+    <div class="add_leave">
+        <div class="header">
+            <h3 class="heading">Add Leave </h3>
+            <button class="btn_add_new" (click)="toggle=!toggle">+Add New</button>
+        </div>
+            <form *ngIf="toggle" [formGroup]="leaveForm" (ngSubmit)="onSubmit()">
+
+            <div class="left">
+                <div class="row">
+                    <app-common-dropdown [label]="'Leave Type'" [data]="leaveTypes" [dropdownDownControlName]="getControl('leave_type')" ></app-common-dropdown>
+                </div>
+                <div class="half_day">
+                    <ng-container *ngIf="!(getControl('leave_type').value=='Short Leave')">
+
+                        <mat-checkbox class="example-margin" formControlName="is_half_day" >Half Day ?</mat-checkbox>
+                        <mat-radio-group class="radio_buttons" *ngIf="getControl('is_half_day')?.value"  aria-label="Select an option" formControlName="half_day">
+                            <mat-radio-button value="first_half">First Half</mat-radio-button>
+                            <mat-radio-button value="second_half">Second Half</mat-radio-button>
+                        </mat-radio-group>
+                    </ng-container>
+                    <ng-container *ngIf="(getControl('leave_type').value=='Short Leave')">
+                        <app-common-input [label]="'Start Time'" [inputFormControl]="getControl('start_time')"></app-common-input>
+                        <app-common-input [label]="'End Time'" [inputFormControl]="getControl('end_time')"></app-common-input>
+
+                    </ng-container>
+
+                </div>
+                <div class="date">
+                    <app-common-date-picker [label]="'Start Date'" [inputFormControl]="getControl('start_date')" ></app-common-date-picker>
+                    <app-common-date-picker [label]="'End Date'" [inputFormControl]="getControl('end_date')" ></app-common-date-picker>
+
+                </div>
+                <div class="row">
+                    <app-common-input [label]="'Remark'" [inputFormControl]="getControl('remark')"></app-common-input>
+                </div>
+                <div class="row">
+                    <app-common-file-input [label]="'Upload Document'" [inputFormControl]="getControl('document')"></app-common-file-input>
+                </div>
+            </div>
+            <div class="right">
+                <app-common-text-editor [label]="'Leave Reason'" [inputFormControl]="getControl('reason')" ></app-common-text-editor>
+            </div>
+            <div class="actions">
+                <button class="btn_primary save" mat-raised-button type="submit">Save</button>
+                <button class="btn_cancel cancel" mat-raised-button type="reset" (click)="toggle=false" > Cancel</button>
+
+            </div>
+        </form>
+
+        </div>
+    <div class="table">
+        <app-common-table [columns]="columns" [dataSourceForTable]="dataSource"></app-common-table>
+
+    </div>
+
+</section>
+
+<ng-template #leave let-data="data">
+    <div class="leave_card_container">
+        <mat-icon class="icon"> event </mat-icon>
+        <div class="leave_card">
+            <div class="text_muted small"> {{data?.leaveType}} Leaves (<ng-container
+                    *ngIf="data.usedLeave">{{data?.usedLeave}}/</ng-container>
+
+                {{data.totalLeave}})</div>
+            <div class="text_muted small"> {{data?.leaveType}} Leaves Balance ({{data?.totalLeave - data?.usedLeave }})
+            </div>
+            <div class="text_large">
+                <div class="progress" style="height: 6px;">
+                    <div class="progress-bar" style="width: 0%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>

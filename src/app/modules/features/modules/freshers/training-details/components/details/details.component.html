@@ -1,0 +1,49 @@
+<section>
+    <div class="row 1">
+        <div class="header">
+            <h3 class="heading">Training Details</h3>
+        </div>
+        <div class="inside_row training_details">
+            <div class="title">
+                <div class="form_data">
+                    <label>{{ LABELS.TITLE }} : </label>
+                    <p>Angular Training</p>
+                </div>
+            </div>
+            <div class="data">
+                <div class="form_data">
+                    <label>{{ LABELS.DEPARTMENT }} :</label>
+                    <p>Angular</p>
+                </div>
+                <div class="form_data">
+                    <label>{{ LABELS.MODE }} :</label>
+                    <p>Online</p>
+                </div>
+                <div class="form_data">
+                    <label>{{ LABELS.START_DATE }} :</label>
+                    <p>Feb-28-2022</p>
+                </div>
+                <div class="form_data">
+                    <label>{{ LABELS.END_DATE }}:</label>
+                    <p>Apr-28-2022</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row 2">
+        <div class="header">
+            <h3 class="heading">Description</h3>
+        </div>
+        <div class="description">
+            Angular Training Feb- 2022 - Uploaded from sheet
+        </div>
+    </div>
+    <div class="row 3">
+        <div class="header">
+            <h3 class="heading">Topics</h3>
+        </div>
+        <div class="table">
+            <app-common-table [columns]="columns" [dataSourceForTable]="dataSource"></app-common-table>
+        </div>
+    </div>
+</section>

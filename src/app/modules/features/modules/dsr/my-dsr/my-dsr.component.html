@@ -1,0 +1,67 @@
+<section>
+
+    <div class="add_leave">
+        <div class="header">
+            <h3 class="heading">Create New DSR</h3>
+            <button class="btn_add_new" (click)="toggle=!toggle">+Add New</button>
+        </div>
+        <form *ngIf="toggle" [formGroup]="dsrForm" (ngSubmit)="onSubmit()">
+
+            <div class="left">
+                <div class="row">
+                    <app-common-dropdown [label]="'Project'" [data]="leaveTypes"
+                        [dropdownDownControlName]="getControl('project')"></app-common-dropdown>
+                </div>
+                <div class="half_day">
+                    <app-common-date-picker [label]="'Date'"
+                        [inputFormControl]="getControl('date')"></app-common-date-picker>
+                    <app-common-input [label]="'Estimated Hour'"
+                        [inputFormControl]="getControl('logged_hr')"></app-common-input>
+                    <mat-checkbox class="example-margin" value="true" (click)="onSelect()" >No Work Done</mat-checkbox>
+                </div>
+
+            </div>
+            <div class="right">
+                <app-common-text-editor [label]="'Description'"
+                    [inputFormControl]="getControl('description')"></app-common-text-editor>
+            </div>
+            <div class="actions">
+                <button class="btn_primary save" mat-raised-button type="submit" >Add</button>
+                <button class="btn_cancel cancel" mat-raised-button type="reset" (click)="toggle=false"> Cancel</button>
+
+            </div>
+        </form>
+
+    </div>
+
+    <div class="filter">
+        <form [formGroup]="filterForm" (ngSubmit)="onFilter()">
+            <app-common-date-picker [label]="'Start Date'"
+                [inputFormControl]="getFilterControl('start_date')"></app-common-date-picker>
+            <app-common-date-picker [label]="'Start Date'"
+                [inputFormControl]="getFilterControl('start_date')"></app-common-date-picker>
+            <app-common-dropdown [label]="'Submission Status'" [data]="leaveTypes"
+                [dropdownDownControlName]="getFilterControl('submission_status')"></app-common-dropdown>
+            <app-common-dropdown [label]="'Project'" [data]="leaveTypes"
+                [dropdownDownControlName]="getFilterControl('project')"></app-common-dropdown>
+            <app-common-dropdown [label]="'Final Approval Status'" [data]="leaveTypes"
+                [dropdownDownControlName]="getFilterControl('final_approve')"></app-common-dropdown>
+            <app-common-dropdown [label]="'Hours'" [data]="leaveTypes"
+                [dropdownDownControlName]="getFilterControl('hours')"></app-common-dropdown>
+            <div class="actions">
+                <button class="btn_primary save" mat-raised-button type="submit">Search</button>
+                <button class="btn_cancel cancel" mat-raised-button type="reset"> Reset</button>
+
+            </div>
+        </form>
+    </div>
+    
+    <div class="table">
+        <div class="header">
+            <h3 class="heading">List All Worksheets</h3>
+        </div>
+        <app-common-table [columns]="columns" [dataSourceForTable]="dataSource"></app-common-table>
+
+    </div>
+
+</section>

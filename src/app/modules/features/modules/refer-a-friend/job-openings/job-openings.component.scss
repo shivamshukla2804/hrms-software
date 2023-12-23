@@ -1,0 +1,34 @@
+@import 'src/scss/dashbord-card-heading.scss';
+
+section{
+    .header{
+        margin-bottom: 1.7rem;
+        .heading{
+             color: #199cff;
+        }
+    }
+    .main{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 1.2rem;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+  section{
+    .main{
+        grid-template-columns: auto  auto;
+
+    }
+  }
+
+}
+@media only screen and (max-width: 500px) {
+    section{
+      .main{
+          grid-template-columns:  auto;
+  
+      }
+    }
+  
+  }

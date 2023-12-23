@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section {
+  background-color: #fff;
+
+  .header {
+    border-bottom: 1px solid var(--border-color);
+
+    .header-text {
+      color: var(--profile-heading-color);
+      font-size: 20px;
+      padding: 11px 25px 11px 15px;
+      font-weight: 500;
+    }
+  }
+
+  form {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: auto auto;
+
+    .label {
+      font-weight: 500;
+    }
+
+    .formfield {
+      display: flex;
+      flex-direction: column;
+      padding: 0 10px;
+    }
+
+
+    ::ng-deep {
+      .mat-form-field-appearance-outline .mat-form-field-flex {
+        box-shadow: 0px 4px 8px rgb(44 39 56 / 4%) !important;
+      }
+
+      .mat-form-field-appearance-outline .mat-form-field-infix {
+        padding: 12px 0px 12px 0px;
+      }
+
+      .mat-select-disabled .mat-select-trigger {
+        cursor: not-allowed !important;
+      }
+    }
+
+    .inputs {
+      display: flex;
+      gap: 30px;
+    }
+
+    @media only screen and (max-width: 750px) {
+    grid-template-columns: auto;
+
+    }
+
+  }
+}

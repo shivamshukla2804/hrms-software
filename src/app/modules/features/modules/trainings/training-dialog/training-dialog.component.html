@@ -1,0 +1,108 @@
+<section>
+    <div class="header">
+        <h3 class="heading">{{ LABELS.HEADING }}</h3>
+        <div class="cancel_icon" (click)="onNoClick()">
+            <mat-icon class="icon">close</mat-icon>
+        </div>
+    </div>
+    <div class="training_details">
+        <div class="form_data">
+            <label>{{LABELS.TITLE}} : </label>
+            <p>Angular Training</p>
+        </div>
+        <div class="form_data">
+            <label>{{LABELS.DEPARTMENT}} :</label>
+            <p>Angular</p>
+        </div>
+        <div class="date">
+            <div class="form_data">
+                <label>{{LABELS.START_DATE}} :</label>
+                <p>Feb-28-2022</p>
+            </div>
+            <div class="form_data">
+                <label>{{LABELS.END_DATE}}:</label>
+                <p>Apr-28-2022</p>
+            </div>
+        </div>
+    </div>
+
+    <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
+
+        <div class="description col_1">
+            <p class="label_text">{{LABELS.OBJECTIV}}</p>
+            <mat-radio-group formControlName="goal">
+                <mat-radio-button value="yes">Yes</mat-radio-button>
+                <mat-radio-button value="no">No</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div class="description col5" *ngIf="getControl('goal').value=='no'">
+            <label class="label_text">{{ LABELS.MISSING }}</label>
+            <mat-form-field appearance="outline">
+                <textarea [maxLength]="200" #textarea matInput formControlName="what_is_missing"></textarea>
+                <mat-error>{{ getControl("goal") | validate : LABELS.MISSING }}</mat-error>
+
+            </mat-form-field>
+            <p class="maxlength">
+                {{textarea.value.length}}/{{200}}</p>
+        </div>
+        <div class="description col_2">
+            <p class="label_text">{{LABELS.RELEVENT}}</p>
+
+            <div class="radio_buttons">
+                <span class="warn">Not Very</span>
+                <mat-radio-group formControlName="relevent">
+                    <mat-radio-button value="1">1</mat-radio-button>
+                    <mat-radio-button value="2">2</mat-radio-button>
+                    <mat-radio-button value="3">3</mat-radio-button>
+                    <mat-radio-button value="4">4</mat-radio-button>
+                    <mat-radio-button value="5">5</mat-radio-button>
+                </mat-radio-group>
+                <span class="success">Very Much</span>
+            </div>
+        </div>
+        <div class="description col_3">
+            <p class="label_text">{{LABELS.OVERALL_TRAINING}}</p>
+            <div class="radio_buttons">
+                <span class="warn">Not Very</span>
+                <mat-radio-group formControlName="overall_training">
+                    <mat-radio-button value="1">1</mat-radio-button>
+                    <mat-radio-button value="2">2</mat-radio-button>
+                    <mat-radio-button value="3">3</mat-radio-button>
+                    <mat-radio-button value="4">4</mat-radio-button>
+                    <mat-radio-button value="5">5</mat-radio-button>
+                </mat-radio-group>
+                <span class="success">Very Much</span>
+            </div>
+        </div>
+        <div class="description col_4">
+            <p class="label_text">{{LABELS.SATISFACTION}}</p>
+            <div class="radio_buttons">
+                <span class="warn">Not Very</span>
+                <mat-radio-group formControlName="satisfaction">
+                    <mat-radio-button value="1">1</mat-radio-button>
+                    <mat-radio-button value="2">2</mat-radio-button>
+                    <mat-radio-button value="3">3</mat-radio-button>
+                    <mat-radio-button value="4">4</mat-radio-button>
+                    <mat-radio-button value="5">5</mat-radio-button>
+                </mat-radio-group>
+                <span class="success">Very Much</span>
+            </div>
+        </div>
+        <div class="description col5">
+            <label class="label_text">{{ LABELS.OVERALL }}</label>
+            <mat-form-field appearance="outline">
+                <textarea [maxLength]="200" #textarea matInput formControlName="overall_feedback"></textarea>
+                <mat-error>{{ getControl("overall_feedback") | validate : LABELS.OVERALL }}</mat-error>
+
+            </mat-form-field>
+            <p class="maxlength">
+                {{textarea.value.length}}/{{200}}</p>
+        </div>
+        <div class="buttonGroup">
+            <button class="btn_cancel" (click)="onNoClick()" mat-raised-button type="reset">
+                {{LABELS.CANCEL_BUTTON }}
+            </button>
+            <button class="btn_primary" type="submit" mat-raised-button>{{ LABELS.SUBMIT_BUTTON }}</button>
+        </div>
+    </form>
+</section>

@@ -1,0 +1,25 @@
+@import 'src/scss/dashbord-card-heading.scss';
+@import 'src/scss/buttons.scss';
+section{
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 1rem;
+    .header{
+        
+        .heading{
+            border-bottom: 1px solid #f3f7fc;
+            color: var(--header-text-color);
+        }
+    }
+    form{
+        display: grid;
+        grid-template-columns: 50% auto;
+        gap: 2rem;
+        .second{
+           display: grid;
+        grid-template-columns: auto auto;
+            gap: 2rem;
+        }
+    }
+
+}

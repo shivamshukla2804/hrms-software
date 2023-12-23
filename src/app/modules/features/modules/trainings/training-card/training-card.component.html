@@ -1,0 +1,35 @@
+    <div class="job_details">
+        <div class="job_logo">
+            <figure>
+                <img src="assets/ic-training.svg" alt="job_logo">
+            </figure>
+        </div>
+        <div class="job_title">
+            <h4 class="heading">{{data.technology}}</h4>
+            <p class="badge" [ngClass]=" data.status=='completed' ||data.status=='enrolled' ? 'success':'failure' " >{{data.status}}</p>
+        </div>
+        <div class="job_exp_opening"> 
+        <div class="attendees" *ngIf="data.attendees">
+            <p>Who Can Attend</p>
+            <h4>{{data.attendees}}</h4>
+        </div>
+            <div class="timing">
+                <div class="no_opening">
+                    <p>Start Date</p>
+                    <h4>{{data.start_date}}</h4>
+                </div>
+                <div class="end_date">
+                    <p>End Date</p>
+                    <h4>{{data.end_date}}</h4>
+                </div>
+                <div class="no_experience">
+                    <p>Mode</p>
+                    <h4>{{data.mode}}</h4>
+                </div>
+            </div>
+        </div>
+        <div class="actions">
+            <button mat-button class="view_details btn_cancel" [routerLink]="[data.route|absolutePath,123]"  >{{data.detail_btn_label}}</button>
+            <button mat-raised-button class="refer " [ngClass]="data.attendees?'btn_danger': 'btn_primary'" (click)="submitHandeler(data)">{{data.success_btn_label}}</button>
+        </div>
+    </div>
