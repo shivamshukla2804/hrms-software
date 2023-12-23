@@ -6,8 +6,6 @@ import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ToastrModule } from "ngx-toastr";
 import { ConfirmationDialogComponent } from "./dialogs/confirmation-dialog/confirmation-dialog.component";
-import { provideFirebaseApp, initializeApp } from "@angular/fire/app";
-import { environment } from "src/environments/environment";
 
 @NgModule({
   declarations: [AppComponent, ConfirmationDialogComponent],
@@ -20,7 +18,6 @@ import { environment } from "src/environments/environment";
       timeOut: 1500,
       progressBar: true,
     }),
-    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
   ],
   providers: [],
   bootstrap: [AppComponent],
