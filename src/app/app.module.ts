@@ -1,30 +1,28 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToastrModule } from 'ngx-toastr';
-import { ConfirmationDialogComponent } from './dialogs/confirmation-dialog/confirmation-dialog.component';
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { ToastrModule } from "ngx-toastr";
+import { ConfirmationDialogComponent } from "./dialogs/confirmation-dialog/confirmation-dialog.component";
+import { provideFirebaseApp, initializeApp } from "@angular/fire/app";
+import { environment } from "src/environments/environment";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ConfirmationDialogComponent,
-    
-  ],
+  declarations: [AppComponent, ConfirmationDialogComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
-      closeButton:true,
-      timeOut:1500,
-      progressBar:true,
+      closeButton: true,
+      timeOut: 1500,
+      progressBar: true,
     }),
-
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
